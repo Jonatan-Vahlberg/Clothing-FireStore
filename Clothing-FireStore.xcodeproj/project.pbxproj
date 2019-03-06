@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4BDE3C90D58CF7B733255E6 /* Pods_Clothing_FireStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F6154947A9CBF1244C31AA6 /* Pods_Clothing_FireStore.framework */; };
+		DF3E4094223022D900CF2231 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E4093223022D900CF2231 /* Customer.swift */; };
+		DF3E4096223023F400CF2231 /* CatalogueItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E4095223023F400CF2231 /* CatalogueItem.swift */; };
 		DF54B7042230184300E1CC97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF54B7032230184300E1CC97 /* AppDelegate.swift */; };
 		DF54B7062230184300E1CC97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF54B7052230184300E1CC97 /* ViewController.swift */; };
 		DF54B7092230184300E1CC97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF54B7072230184300E1CC97 /* Main.storyboard */; };
 		DF54B70B2230184300E1CC97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF54B70A2230184300E1CC97 /* Assets.xcassets */; };
 		DF54B70E2230184300E1CC97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF54B70C2230184300E1CC97 /* LaunchScreen.storyboard */; };
+		DF54B7162230193E00E1CC97 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF54B7152230193E00E1CC97 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F6154947A9CBF1244C31AA6 /* Pods_Clothing_FireStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clothing_FireStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F1117539C21613AAB17B963 /* Pods-Clothing-FireStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clothing-FireStore.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clothing-FireStore/Pods-Clothing-FireStore.release.xcconfig"; sourceTree = "<group>"; };
+		8FCC9FC7250597FE7D0BF0D4 /* Pods-Clothing-FireStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clothing-FireStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clothing-FireStore/Pods-Clothing-FireStore.debug.xcconfig"; sourceTree = "<group>"; };
+		DF3E4093223022D900CF2231 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		DF3E4095223023F400CF2231 /* CatalogueItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueItem.swift; sourceTree = "<group>"; };
 		DF54B7002230184300E1CC97 /* Clothing-FireStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clothing-FireStore.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF54B7032230184300E1CC97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF54B7052230184300E1CC97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +31,7 @@
 		DF54B70A2230184300E1CC97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF54B70D2230184300E1CC97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF54B70F2230184300E1CC97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF54B7152230193E00E1CC97 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4BDE3C90D58CF7B733255E6 /* Pods_Clothing_FireStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		86F36C88464FD4F6BF8ED5D5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8FCC9FC7250597FE7D0BF0D4 /* Pods-Clothing-FireStore.debug.xcconfig */,
+				6F1117539C21613AAB17B963 /* Pods-Clothing-FireStore.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AAA860C18291F666072A88D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F6154947A9CBF1244C31AA6 /* Pods_Clothing_FireStore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DF54B6F72230184300E1CC97 = {
 			isa = PBXGroup;
 			children = (
 				DF54B7022230184300E1CC97 /* Clothing-FireStore */,
 				DF54B7012230184300E1CC97 /* Products */,
+				86F36C88464FD4F6BF8ED5D5 /* Pods */,
+				AAA860C18291F666072A88D3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +85,40 @@
 			isa = PBXGroup;
 			children = (
 				DF54B7032230184300E1CC97 /* AppDelegate.swift */,
-				DF54B7052230184300E1CC97 /* ViewController.swift */,
-				DF54B7072230184300E1CC97 /* Main.storyboard */,
+				DFE239672230223600270688 /* Controllers */,
+				DFE239662230221D00270688 /* Datamodels */,
+				DFE239682230225700270688 /* Views */,
 				DF54B70A2230184300E1CC97 /* Assets.xcassets */,
-				DF54B70C2230184300E1CC97 /* LaunchScreen.storyboard */,
 				DF54B70F2230184300E1CC97 /* Info.plist */,
+				DF54B7152230193E00E1CC97 /* GoogleService-Info.plist */,
 			);
 			path = "Clothing-FireStore";
+			sourceTree = "<group>";
+		};
+		DFE239662230221D00270688 /* Datamodels */ = {
+			isa = PBXGroup;
+			children = (
+				DF3E4093223022D900CF2231 /* Customer.swift */,
+				DF3E4095223023F400CF2231 /* CatalogueItem.swift */,
+			);
+			path = Datamodels;
+			sourceTree = "<group>";
+		};
+		DFE239672230223600270688 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DF54B7052230184300E1CC97 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DFE239682230225700270688 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DF54B70C2230184300E1CC97 /* LaunchScreen.storyboard */,
+				DF54B7072230184300E1CC97 /* Main.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +128,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DF54B7122230184300E1CC97 /* Build configuration list for PBXNativeTarget "Clothing-FireStore" */;
 			buildPhases = (
+				555EC04E245A8E93551D8ECE /* [CP] Check Pods Manifest.lock */,
 				DF54B6FC2230184300E1CC97 /* Sources */,
 				DF54B6FD2230184300E1CC97 /* Frameworks */,
 				DF54B6FE2230184300E1CC97 /* Resources */,
+				FD24524608EC4FBADAA5F1E8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,6 +182,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF54B7162230193E00E1CC97 /* GoogleService-Info.plist in Resources */,
 				DF54B70E2230184300E1CC97 /* LaunchScreen.storyboard in Resources */,
 				DF54B70B2230184300E1CC97 /* Assets.xcassets in Resources */,
 				DF54B7092230184300E1CC97 /* Main.storyboard in Resources */,
@@ -131,12 +191,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		555EC04E245A8E93551D8ECE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Clothing-FireStore-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD24524608EC4FBADAA5F1E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Clothing-FireStore/Pods-Clothing-FireStore-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Clothing-FireStore/Pods-Clothing-FireStore-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DF54B6FC2230184300E1CC97 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF3E4094223022D900CF2231 /* Customer.swift in Sources */,
 				DF54B7062230184300E1CC97 /* ViewController.swift in Sources */,
+				DF3E4096223023F400CF2231 /* CatalogueItem.swift in Sources */,
 				DF54B7042230184300E1CC97 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,6 +261,7 @@
 				DF54B7082230184300E1CC97 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		DF54B70C2230184300E1CC97 /* LaunchScreen.storyboard */ = {
@@ -272,6 +384,7 @@
 		};
 		DF54B7132230184300E1CC97 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FCC9FC7250597FE7D0BF0D4 /* Pods-Clothing-FireStore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +399,7 @@
 		};
 		DF54B7142230184300E1CC97 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F1117539C21613AAB17B963 /* Pods-Clothing-FireStore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
