@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="topTableCell" rowHeight="120" id="KGk-i7-Jjw" customClass="TopTableViewCell" customModule="Clothing_FireStore" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="119.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pFy-FE-Drp">
+                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                        <color key="backgroundColor" red="0.54130412579999998" green="0.17125619119999999" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="QfU-RU-sqO"/>
+                            <constraint firstAttribute="width" constant="60" id="Sgt-5E-bd1"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                        <state key="normal" title="| | |">
+                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="menuButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tJl-rt-LQC"/>
+                        </connections>
+                    </button>
+                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="lbS-r9-tho">
+                        <rect key="frame" x="0.0" y="60" width="320" height="56"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="56" id="qXu-6b-aUg"/>
+                        </constraints>
+                        <textInputTraits key="textInputTraits"/>
+                    </searchBar>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ozC-fO-Mpw">
+                        <rect key="frame" x="60" y="0.0" width="260" height="60"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="Tgf-Nt-p31"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NVT-Xw-i1P">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="lbS-r9-tho" firstAttribute="top" secondItem="pFy-FE-Drp" secondAttribute="bottom" id="F3b-Zf-gmy"/>
+                    <constraint firstItem="ozC-fO-Mpw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="JKk-cc-fBC"/>
+                    <constraint firstItem="pFy-FE-Drp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="SUO-Nf-jBK"/>
+                    <constraint firstAttribute="trailing" secondItem="lbS-r9-tho" secondAttribute="trailing" id="Yke-8D-6iG"/>
+                    <constraint firstItem="pFy-FE-Drp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="nNI-l3-BhJ"/>
+                    <constraint firstItem="ozC-fO-Mpw" firstAttribute="leading" secondItem="pFy-FE-Drp" secondAttribute="trailing" id="ncn-4D-sAF"/>
+                    <constraint firstAttribute="trailing" secondItem="ozC-fO-Mpw" secondAttribute="trailing" id="pEf-Sb-rZ7"/>
+                    <constraint firstItem="lbS-r9-tho" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="rwI-sj-gtb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="collectionView" destination="ozC-fO-Mpw" id="2RU-Cu-gKe"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>
