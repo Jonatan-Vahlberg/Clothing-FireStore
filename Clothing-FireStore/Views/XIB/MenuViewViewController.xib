@@ -282,7 +282,7 @@
             <connections>
                 <outletCollection property="gestureRecognizers" destination="6PF-yf-b81" appends="YES" id="PX2-9S-dPn"/>
             </connections>
-            <point key="canvasLocation" x="29.5" y="52.5"/>
+            <point key="canvasLocation" x="-236" y="-169"/>
         </view>
         <view contentMode="scaleToFill" id="VJn-DG-7Hn">
             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>

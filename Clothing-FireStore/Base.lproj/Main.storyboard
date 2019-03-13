@@ -310,7 +310,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H9h-va-qee" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1906" y="-605"/>
+            <point key="canvasLocation" x="-1343" y="200"/>
         </scene>
         <!--Menu View View Controller-->
         <scene sceneID="a3e-nl-WG5">
@@ -318,7 +318,7 @@
                 <viewController id="NYj-JR-0FS" customClass="MenuViewViewController" customModule="Clothing_FireStore" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnA-Uj-dMK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2652" y="-610"/>
+            <point key="canvasLocation" x="-306" y="-626"/>
         </scene>
         <!--Splash-->
         <scene sceneID="tTK-DH-5fo">
@@ -693,6 +693,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="vKF-kg-bdE"/>
-        <segue reference="FX2-FI-yQZ"/>
+        <segue reference="4pA-hN-FUZ"/>
     </inferredMetricsTieBreakers>
 </document>
