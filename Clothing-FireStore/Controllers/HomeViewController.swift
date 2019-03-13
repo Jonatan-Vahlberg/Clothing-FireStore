@@ -20,9 +20,17 @@ class HomeViewController: CatalogueViewController{
     
     var catalogueDelegate : updateSelectedCatalogue?
     
+    @IBOutlet var menuBtn: UIBarButtonItem!
     
     
     override func viewDidLoad() {
+        
+        if revealViewController() != nil{
+            menuBtn.target = revealViewController()
+            menuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
+            
+            view.addGestureRecognizer(revealViewController().panGestureRecognizer())
+        }
         
         super.viewDidLoad()
         
