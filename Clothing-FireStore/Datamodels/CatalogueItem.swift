@@ -9,13 +9,15 @@
 import Foundation
 
 class CatalogueItem{
+    let id: Int
     let name : String
     var price: Int
     var description: String
     var special: ()-> Void?
     var stock: Int
     
-    init(name: String, price: Int, description: String,stock: Int, special: @escaping () -> Void ) {
+    init(id: Int,name: String, price: Int, description: String,stock: Int, special: @escaping () -> Void ) {
+        self.id = id
         self.name = name
         self.price = price
         self.description = description

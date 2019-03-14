@@ -18,12 +18,6 @@ class TopTableViewCell: UITableViewCell {
 //
 //        // Configure the view for the selected state
 //    }
-    
-    //present popover view
-    @IBAction func menuButtonPressed(_ sender: UIButton) {
-        
-        
-    }
 }
 
 extension TopTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{

@@ -59,13 +59,7 @@ class MenuViewViewController: UIViewController {
             }
             
             
-            let vc = sb.instantiateViewController(withIdentifier: destinationName) as UIViewController
-            if revealViewController() != nil {
-                let navController = UINavigationController(rootViewController: vc)
-                self.revealViewController().present(navController, animated: true, completion: nil)
-            }
-            //navigationController?.pushViewController(vc, animated: true)
-            //self.present(vc, animated: true, completion: nil)
+            
         }
         
     }

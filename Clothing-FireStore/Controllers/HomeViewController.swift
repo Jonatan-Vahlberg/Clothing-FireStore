@@ -25,12 +25,7 @@ class HomeViewController: CatalogueViewController{
     
     override func viewDidLoad() {
         
-        if revealViewController() != nil{
-            menuBtn.target = revealViewController()
-            menuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
-            
-            view.addGestureRecognizer(revealViewController().panGestureRecognizer())
-        }
+       
         
         super.viewDidLoad()
         
@@ -42,10 +37,10 @@ class HomeViewController: CatalogueViewController{
         
         
         
-        catalogue.add(to: CatalogueItem(name: "Stilletto Heeels", price: 400, description: "", stock: 20){})
-        catalogue.add(to: CatalogueItem(name: "Mobamba Heeels", price: 400, description: "", stock: 20){})
-        catalogue.add(to: CatalogueItem(name: "Stilletto Heeels", price: 100, description: "", stock: 20){})
-        catalogue.add(to: CatalogueItem(name: "Mobamba Heeels", price: 900, description: "", stock: 20){})
+        catalogue.add(to: CatalogueItem(id: 567, name: "Stilletto Heeels", price: 400, description: "", stock: 20){})
+        catalogue.add(to: CatalogueItem(id: 567, name: "Stilletto Heeels", price: 400, description: "", stock: 20){})
+        catalogue.add(to: CatalogueItem(id: 567, name: "Stilletto Heeels", price: 400, description: "", stock: 20){})
+        catalogue.add(to: CatalogueItem(id: 567, name: "Stilletto Heeels", price: 400, description: "", stock: 20){})
         
         catalogueDelegate?.updateCatalogue(withNew: catalogue)
         // Do any additional setup after loading the view.
@@ -85,6 +80,7 @@ extension HomeViewController{
             tableView.rowHeight = 260
               let cell = tableView.dequeueReusableCell(withIdentifier: "catalogueTableCell", for: indexPath) as! CatalogueTableViewCell
             cell.title.text = "Most Liked Items"
+            cell.delegate = self
             
             
             return cell
@@ -96,7 +92,17 @@ extension HomeViewController{
     }
 }
 
-
+extension HomeViewController: NavigationalItems{
+    
+    func navigate(with index: Int) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "itemSB") as! ItemViewController
+        vc.catalogueItem = catalogue.get(for: index)
+        present(vc, animated: true, completion: nil)
+    }
+    
+    
+}
 //MARK: - Collection View Overrides
 //extension HomeViewController{
 //

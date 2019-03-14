@@ -8,7 +8,9 @@
 
 import UIKit
 
-
+protocol NavigationalItems{
+    func navigate(with index: Int)
+}
 
 class CatalogueTableViewCell: UITableViewCell{
 
@@ -17,7 +19,9 @@ class CatalogueTableViewCell: UITableViewCell{
     
     let collectionId = "smallItemCell"
     
-    var catalogue : Catalogue?
+    var catalogue = Catalogue()
+    
+    var delegate: NavigationalItems?
     
     class var catalogueCell: CatalogueTableViewCell {
         let cell = Bundle.main.loadNibNamed("CatalogueTableViewCell", owner: self, options: nil)
@@ -37,7 +41,7 @@ extension CatalogueTableViewCell: UICollectionViewDataSource, UICollectionViewDe
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        catalogue.add(to: CatalogueItem(id: 567, name: "Stilletto Heeels", price: 400, description: "", stock: 20){})
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc =  sb.instantiateViewController(withIdentifier: "homeStoryboard") as! HomeViewController
         
@@ -61,16 +65,16 @@ extension CatalogueTableViewCell: UICollectionViewDataSource, UICollectionViewDe
         return 4
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let item = catalogue?.get(for: indexPath.item){
-            
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionId, for: indexPath) as! ItemCollectionViewCell
-            cell.itemName.text = item.name
-            cell.itemPrice.text = "\(item.price) kr"
-            return cell
-        }else{
+//        if let item = catalogue?.get(for: indexPath.item){
+//
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionId, for: indexPath) as! ItemCollectionViewCell
+//            cell.itemName.text = item.name
+//            cell.itemPrice.text = "\(item.price) kr"
+//            return cell
+//        }else{
            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionId, for: indexPath) as! ItemCollectionViewCell
             return cell
-        }
+//        }
         
         
     }
@@ -81,6 +85,10 @@ extension CatalogueTableViewCell: UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("item \(indexPath.item)")
+        if(indexPath.item == 0){
+            delegate?.navigate(with: indexPath.item)
+            
+        }
     }
 
 }
