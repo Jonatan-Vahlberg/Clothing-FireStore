@@ -24,7 +24,7 @@
         <!--Register-->
         <scene sceneID="30y-s5-SjK">
             <objects>
-                <viewController storyboardIdentifier="registerSB" title="Register" id="cJy-gK-WYQ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="registerSB" title="Register" id="cJy-gK-WYQ" customClass="RegisterViewController" customModule="Clothing_FireStore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9dC-aa-Zo5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,6 +37,9 @@
                                 <state key="normal" title="Signup">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="signupButtonPressed:" destination="cJy-gK-WYQ" eventType="touchUpInside" id="dUf-Zj-B1y"/>
+                                </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ed-fa-WdO">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -47,9 +50,15 @@
                                     <navigationItem title="Register" id="4Sy-Qp-rkv">
                                         <barButtonItem key="leftBarButtonItem" title="Login" id="Zo9-hc-OCg">
                                             <color key="tintColor" red="0.54117647059999996" green="0.17254901959999999" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="loginPressed:" destination="cJy-gK-WYQ" id="Kyy-ED-Rx6"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Not Now" id="4Lz-fP-dDb">
                                             <color key="tintColor" red="0.54117647059999996" green="0.17254901959999999" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="notNowButtonPressed:" destination="cJy-gK-WYQ" id="7bQ-zI-QUn"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -290,7 +299,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="zbz-Mt-tBQ" kind="show" id="63Q-Dw-OPp"/>
+                        <outlet property="emailField" destination="fa0-X3-iHC" id="r3i-a4-zP1"/>
+                        <outlet property="firstNameField" destination="ofm-t1-9JN" id="KdS-ml-hQc"/>
+                        <outlet property="lastNameField" destination="RkY-kg-sss" id="HzL-Ng-3yD"/>
+                        <outlet property="passwordField" destination="Lf9-d3-sfG" id="AeP-S9-L9c"/>
+                        <outlet property="repeatPasswordField" destination="TgO-3I-aff" id="fsu-tn-efB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sb6-Ze-P0X" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -305,23 +318,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aw6-kb-J2X">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aw6-kb-J2X">
                                 <rect key="frame" x="120" y="571" width="135" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="25"/>
                                 <state key="normal" title="Signup later">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="moveForward:" destination="HcS-UK-UK4" eventType="touchUpInside" id="T9N-oH-xjH"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xw3-yV-9ET">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xw3-yV-9ET">
                                 <rect key="frame" x="120" y="312" width="135" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="25"/>
                                 <state key="normal" title="Register">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="moveForward:" destination="HcS-UK-UK4" eventType="touchUpInside" id="BRB-st-4EP"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3PT-jU-l7Z">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3PT-jU-l7Z">
                                 <rect key="frame" x="120" y="403" width="135" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="25"/>
@@ -329,7 +348,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="goToLogin:" destination="HcS-UK-UK4" eventType="touchUpInside" id="pvD-nf-WmO"/>
+                                    <action selector="moveForward:" destination="HcS-UK-UK4" eventType="touchUpInside" id="sjR-j3-mYp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -337,11 +356,6 @@
                         <viewLayoutGuide key="safeArea" id="Sxt-Gg-eQH"/>
                     </view>
                     <navigationItem key="navigationItem" id="PLs-jS-ldo"/>
-                    <connections>
-                        <segue destination="zbz-Mt-tBQ" kind="show" identifier="goToHome" id="f16-K0-veQ"/>
-                        <segue destination="cJy-gK-WYQ" kind="show" id="7FF-aA-sax"/>
-                        <segue destination="qnC-rN-Gd6" kind="show" identifier="goToLogin" id="gaA-ds-xbQ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q59-AH-gJl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -697,7 +711,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginButtonPressed:" destination="qnC-rN-Gd6" eventType="touchUpInside" id="k5w-hr-QzC"/>
+                                    <action selector="loginPressed:" destination="qnC-rN-Gd6" eventType="touchUpInside" id="Vq7-u1-60C"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="17n-cH-1CU">
@@ -709,9 +723,15 @@
                                     <navigationItem title="Login" id="shC-af-zKD">
                                         <barButtonItem key="leftBarButtonItem" title="Register" id="cPl-va-UhF">
                                             <color key="tintColor" red="0.54117647059999996" green="0.17254901959999999" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="registerButtonPressed:" destination="qnC-rN-Gd6" id="MBb-gC-QZC"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Not Now" id="6L0-b0-FDn">
                                             <color key="tintColor" red="0.54117647059999996" green="0.17254901959999999" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="notNowButtonPressed:" destination="qnC-rN-Gd6" id="6ah-tG-UL2"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -749,7 +769,8 @@
                         <barButtonItem key="rightBarButtonItem" title="Register" id="eVA-DK-nBi"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="zbz-Mt-tBQ" kind="show" identifier="loginToHome" id="vKF-kg-bdE"/>
+                        <outlet property="emailField" destination="xJJ-TP-chj" id="O8v-es-ofR"/>
+                        <outlet property="passwordField" destination="RJR-KG-w2r" id="JTo-eh-jny"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="psR-F6-y4B" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -793,7 +814,4 @@
         <image name="spring" width="2592" height="1728"/>
         <image name="users" width="240" height="240"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="vKF-kg-bdE"/>
-    </inferredMetricsTieBreakers>
 </document>

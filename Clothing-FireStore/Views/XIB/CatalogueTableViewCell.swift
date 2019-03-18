@@ -19,7 +19,6 @@ class CatalogueTableViewCell: UITableViewCell{
     
     let collectionId = "smallItemCell"
     
-    var catalogue = Catalogue()
     
     var delegate: NavigationalItems?
     
@@ -41,12 +40,6 @@ extension CatalogueTableViewCell: UICollectionViewDataSource, UICollectionViewDe
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        catalogue.add(to: CatalogueItem(id: 567, name: "Stilletto Heeels", price: 400, description: "", stock: 20){})
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc =  sb.instantiateViewController(withIdentifier: "homeStoryboard") as! HomeViewController
-        
-        vc.catalogueDelegate = self
-        
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
         flowLayout.itemSize = CGSize(width: 120, height: 220)
@@ -65,15 +58,17 @@ extension CatalogueTableViewCell: UICollectionViewDataSource, UICollectionViewDe
         return 4
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        if let item = catalogue?.get(for: indexPath.item){
-//
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionId, for: indexPath) as! ItemCollectionViewCell
-//            cell.itemName.text = item.name
-//            cell.itemPrice.text = "\(item.price) kr"
-//            return cell
-//        }else{
-           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionId, for: indexPath) as! ItemCollectionViewCell
+        
+            guard let item = Catalogue.shared.get(for: indexPath.item) else{
+                return UICollectionViewCell()
+            }
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionId, for: indexPath) as! ItemCollectionViewCell
+            cell.itemName.text = item.name
+            cell.itemPrice.text = "\(item.price) kr"
             return cell
+//        }else{
+//           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionId, for: indexPath) as! ItemCollectionViewCell
+//            return cell
 //        }
         
         
@@ -91,14 +86,5 @@ extension CatalogueTableViewCell: UICollectionViewDataSource, UICollectionViewDe
         }
     }
 
-}
-
-extension CatalogueTableViewCell: updateSelectedCatalogue{
-    func updateCatalogue(withNew catalogue: Catalogue) {
-        self.catalogue = catalogue
-        collectionView.reloadData()
-    }
-    
-    
 }
 

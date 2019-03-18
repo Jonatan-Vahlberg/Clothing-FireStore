@@ -7,18 +7,15 @@
 //
 
 import UIKit
-protocol updateSelectedCatalogue {
-    func updateCatalogue(withNew Catalogue: Catalogue)
-}
+import Firebase
+
 class HomeViewController: CatalogueViewController{
     
     
 
     @IBOutlet var tableView: UITableView!
     
-    var catalogue = Catalogue()
-    
-    var catalogueDelegate : updateSelectedCatalogue?
+    //var catalogue = Catalogue()
     
     @IBOutlet var menuBtn: UIBarButtonItem!
     
@@ -35,18 +32,30 @@ class HomeViewController: CatalogueViewController{
         
         tableView.register(UINib(nibName:"CatalogueTableViewCell", bundle: nil), forCellReuseIdentifier: "catalogueTableCell")
         
-        
-        
-        catalogue.add(to: CatalogueItem(id: 567, name: "Stilletto Heeels", price: 400, description: "", stock: 20){})
-        catalogue.add(to: CatalogueItem(id: 567, name: "Stilletto Heeels", price: 400, description: "", stock: 20){})
-        catalogue.add(to: CatalogueItem(id: 567, name: "Stilletto Heeels", price: 400, description: "", stock: 20){})
-        catalogue.add(to: CatalogueItem(id: 567, name: "Stilletto Heeels", price: 400, description: "", stock: 20){})
-        
-        catalogueDelegate?.updateCatalogue(withNew: catalogue)
-        // Do any additional setup after loading the view.
+        for x in 0...(Catalogue.shared.count() - 1){
+            print("Item \(x): \(Catalogue.shared.get(for: x)?.name)")
+        }
+        //updateDatabase()
     }
     
-
+    func updateDatabase(){
+        let refrence = Database.database().reference()
+        let catalogueDB = refrence.child("Catalogue")
+        
+        for x in 0...(Catalogue.shared.count() - 1){
+            if let item = Catalogue.shared.get(for: x){
+                let itemChild = catalogueDB.child(String(item.id))
+                
+                itemChild.child("Id").setValue(item.id)
+                itemChild.child("Name").setValue(item.name)
+                itemChild.child("Price").setValue(item.price)
+                itemChild.child("Description").setValue(item.description)
+                itemChild.child("Stock").setValue(item.stock)
+            }
+            
+        }
+        
+    }
 }
 //MARK: - Table View Overrides
 extension HomeViewController{
@@ -97,30 +106,11 @@ extension HomeViewController: NavigationalItems{
     func navigate(with index: Int) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "itemSB") as! ItemViewController
-        vc.catalogueItem = catalogue.get(for: index)
+        vc.catalogueItem = Catalogue.shared.get(for: index)
         present(vc, animated: true, completion: nil)
     }
     
     
 }
-//MARK: - Collection View Overrides
-//extension HomeViewController{
-//
-//    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        print(catalogue.count())
-//        return catalogue.count()
-//    }
-//
-//
-//
-//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        print(indexPath.item)
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "smallItemCell", for: indexPath) as! ItemCollectionViewCell
-//        let item = catalogue.get(for: indexPath.item)
-//        cell.itemName.text = item.name
-//        cell.itemPrice.text = String(item.price)
-//
-//        return cell
-//    }
-//}
+
 

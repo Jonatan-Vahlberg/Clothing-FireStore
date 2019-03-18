@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D4BDE3C90D58CF7B733255E6 /* Pods_Clothing_FireStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F6154947A9CBF1244C31AA6 /* Pods_Clothing_FireStore.framework */; };
+		DF1A40752240207800EE2F87 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A40742240207800EE2F87 /* KeychainWrapper.swift */; };
 		DF33338C22368B6B00F7B271 /* MenuViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF33338A22368B6B00F7B271 /* MenuViewViewController.swift */; };
 		DF33338D22368B6B00F7B271 /* MenuViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF33338B22368B6B00F7B271 /* MenuViewViewController.xib */; };
 		DF3E4094223022D900CF2231 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E4093223022D900CF2231 /* Customer.swift */; };
@@ -20,6 +21,7 @@
 		DF3E40A22231901100CF2231 /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF3E40A02231901100CF2231 /* ItemCollectionViewCell.xib */; };
 		DF3E40A4223192C500CF2231 /* Catalogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E40A3223192C500CF2231 /* Catalogue.swift */; };
 		DF3E40A62231C4CE00CF2231 /* CatalogueCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E40A52231C4CE00CF2231 /* CatalogueCollectionViewController.swift */; };
+		DF426E06224021D50045D7CD /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF426E05224021D50045D7CD /* KeychainItemAccessibility.swift */; };
 		DF54B7042230184300E1CC97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF54B7032230184300E1CC97 /* AppDelegate.swift */; };
 		DF54B7062230184300E1CC97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF54B7052230184300E1CC97 /* ViewController.swift */; };
 		DF54B7092230184300E1CC97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF54B7072230184300E1CC97 /* Main.storyboard */; };
@@ -36,12 +38,15 @@
 		DF75D0CF223524E80097390F /* TopBarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF75D0CD223524E80097390F /* TopBarCollectionViewCell.swift */; };
 		DF75D0D0223524E80097390F /* TopBarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF75D0CE223524E80097390F /* TopBarCollectionViewCell.xib */; };
 		DF92ECC6223A79A400F1AEA2 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF92ECC5223A79A400F1AEA2 /* ItemViewController.swift */; };
+		DF92ECF9223EF88C00F1AEA2 /* StoryboardNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF92ECF8223EF88C00F1AEA2 /* StoryboardNavigationViewController.swift */; };
+		DFEBAE94223EFBDC00797BB6 /* StoryboardEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEBAE93223EFBDC00797BB6 /* StoryboardEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0F6154947A9CBF1244C31AA6 /* Pods_Clothing_FireStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clothing_FireStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F1117539C21613AAB17B963 /* Pods-Clothing-FireStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clothing-FireStore.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clothing-FireStore/Pods-Clothing-FireStore.release.xcconfig"; sourceTree = "<group>"; };
 		8FCC9FC7250597FE7D0BF0D4 /* Pods-Clothing-FireStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clothing-FireStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clothing-FireStore/Pods-Clothing-FireStore.debug.xcconfig"; sourceTree = "<group>"; };
+		DF1A40742240207800EE2F87 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeychainWrapper.swift; path = "../New Group/KeychainWrapper.swift"; sourceTree = "<group>"; };
 		DF33338A22368B6B00F7B271 /* MenuViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewViewController.swift; sourceTree = "<group>"; };
 		DF33338B22368B6B00F7B271 /* MenuViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewViewController.xib; sourceTree = "<group>"; };
 		DF3E4093223022D900CF2231 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
@@ -54,6 +59,7 @@
 		DF3E40A02231901100CF2231 /* ItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		DF3E40A3223192C500CF2231 /* Catalogue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalogue.swift; sourceTree = "<group>"; };
 		DF3E40A52231C4CE00CF2231 /* CatalogueCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueCollectionViewController.swift; sourceTree = "<group>"; };
+		DF426E05224021D50045D7CD /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
 		DF54B7002230184300E1CC97 /* Clothing-FireStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clothing-FireStore.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF54B7032230184300E1CC97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF54B7052230184300E1CC97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +78,8 @@
 		DF75D0CD223524E80097390F /* TopBarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarCollectionViewCell.swift; sourceTree = "<group>"; };
 		DF75D0CE223524E80097390F /* TopBarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopBarCollectionViewCell.xib; sourceTree = "<group>"; };
 		DF92ECC5223A79A400F1AEA2 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		DF92ECF8223EF88C00F1AEA2 /* StoryboardNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardNavigationViewController.swift; sourceTree = "<group>"; };
+		DFEBAE93223EFBDC00797BB6 /* StoryboardEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,11 +111,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DF1A40762240208000EE2F87 /* KeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				DF426E05224021D50045D7CD /* KeychainItemAccessibility.swift */,
+				DF1A40742240207800EE2F87 /* KeychainWrapper.swift */,
+			);
+			path = KeyChain;
+			sourceTree = "<group>";
+		};
 		DF3E40A72231CE3E00CF2231 /* Helper-Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				DF3E40A52231C4CE00CF2231 /* CatalogueCollectionViewController.swift */,
 				DF75D0BC22327E2F0097390F /* CatalogueViewController.swift */,
+				DF92ECF8223EF88C00F1AEA2 /* StoryboardNavigationViewController.swift */,
+				DFEBAE93223EFBDC00797BB6 /* StoryboardEnum.swift */,
 			);
 			path = "Helper-Controllers";
 			sourceTree = "<group>";
@@ -166,6 +185,7 @@
 		DFE239662230221D00270688 /* Datamodels */ = {
 			isa = PBXGroup;
 			children = (
+				DF1A40762240208000EE2F87 /* KeyChain */,
 				DF3E4093223022D900CF2231 /* Customer.swift */,
 				DF3E4095223023F400CF2231 /* CatalogueItem.swift */,
 				DF3E40A3223192C500CF2231 /* Catalogue.swift */,
@@ -331,6 +351,7 @@
 				DF3E409A22307E7700CF2231 /* LoginViewController.swift in Sources */,
 				DF75D0C5223516640097390F /* BannerTableViewCell.swift in Sources */,
 				DF3E4094223022D900CF2231 /* Customer.swift in Sources */,
+				DF1A40752240207800EE2F87 /* KeychainWrapper.swift in Sources */,
 				DF3E409C22307E8800CF2231 /* RegisterViewController.swift in Sources */,
 				DF3E40A12231901100CF2231 /* ItemCollectionViewCell.swift in Sources */,
 				DF3E409E22307EA000CF2231 /* HomeViewController.swift in Sources */,
@@ -343,9 +364,12 @@
 				DF3E40A62231C4CE00CF2231 /* CatalogueCollectionViewController.swift in Sources */,
 				DF75D0CB223520540097390F /* TopTableViewCell.swift in Sources */,
 				DF75D0BD22327E2F0097390F /* CatalogueViewController.swift in Sources */,
+				DF92ECF9223EF88C00F1AEA2 /* StoryboardNavigationViewController.swift in Sources */,
 				DF3E40A4223192C500CF2231 /* Catalogue.swift in Sources */,
+				DFEBAE94223EFBDC00797BB6 /* StoryboardEnum.swift in Sources */,
 				DF75D0BA223278A00097390F /* CatalogueTableViewCell.swift in Sources */,
 				DF92ECC6223A79A400F1AEA2 /* ItemViewController.swift in Sources */,
+				DF426E06224021D50045D7CD /* KeychainItemAccessibility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

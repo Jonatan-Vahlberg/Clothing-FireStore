@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Reached Config")
         FirebaseApp.configure()
         print("passed Config")
-        
         return true
     }
 
