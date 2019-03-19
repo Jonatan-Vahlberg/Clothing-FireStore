@@ -32,9 +32,9 @@ class HomeViewController: CatalogueViewController{
         
         tableView.register(UINib(nibName:"CatalogueTableViewCell", bundle: nil), forCellReuseIdentifier: "catalogueTableCell")
         
-        for x in 0...(Catalogue.shared.count() - 1){
-            print("Item \(x): \(Catalogue.shared.get(for: x)?.name)")
-        }
+//        for x in 0...(Catalogue.shared.count() - 1){
+//            print("Item \(x): \(Catalogue.shared.get(for: x)?.name)")
+//        }
         //updateDatabase()
     }
     

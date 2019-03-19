@@ -34,17 +34,23 @@ class LoginViewController: StoryboardNavigationViewController {
     }
     
     func authenticateUser(){
+        //Checks if email or password fields are empty before continuing
         if(emailField.text?.count == 0 || passwordField.text?.count == 0){
             presentDefaultAlert(message: "Please Fill out all Nececary Fields")
         }
         else{
+            
             SVProgressHUD.show()
+            //tries to authenticate user based on input to firebase
                         Auth.auth().signIn(withEmail: emailField.text!, password: passwordField.text!, completion: { (user, error) in
                 if(error != nil ){
+                    //if there was an error
                     SVProgressHUD.dismiss()
                     self.presentDefaultAlert(message: "There was an Error Logging In, Check Your Internet Connection And That The Email And Password Is Correct")
                 }
                 else{
+                    //No errors
+                    
                     SVProgressHUD.dismiss()
                     let emailSaved: Bool = KeychainWrapper.standard.set(self.emailField.text!, forKey:"currentEmail")
                     let passwordSaved: Bool = KeychainWrapper.standard.set(self.passwordField.text!, forKey: "currentPassword")
@@ -60,6 +66,7 @@ class LoginViewController: StoryboardNavigationViewController {
         
     }
     
+    //Function for presenting vanilla alert modal box with customizable message
     func presentDefaultAlert(message: String){
         let alert = UIAlertController(title: "Problem Logging in", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "Try Again", style: .default, handler: { (alert) in

@@ -22,6 +22,8 @@
 		DF3E40A4223192C500CF2231 /* Catalogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E40A3223192C500CF2231 /* Catalogue.swift */; };
 		DF3E40A62231C4CE00CF2231 /* CatalogueCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E40A52231C4CE00CF2231 /* CatalogueCollectionViewController.swift */; };
 		DF426E06224021D50045D7CD /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF426E05224021D50045D7CD /* KeychainItemAccessibility.swift */; };
+		DF426E0822412B070045D7CD /* GlobalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF426E0722412B070045D7CD /* GlobalState.swift */; };
+		DF426E0A22412CB30045D7CD /* CurnentStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF426E0922412CB20045D7CD /* CurnentStates.swift */; };
 		DF54B7042230184300E1CC97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF54B7032230184300E1CC97 /* AppDelegate.swift */; };
 		DF54B7062230184300E1CC97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF54B7052230184300E1CC97 /* ViewController.swift */; };
 		DF54B7092230184300E1CC97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF54B7072230184300E1CC97 /* Main.storyboard */; };
@@ -60,6 +62,8 @@
 		DF3E40A3223192C500CF2231 /* Catalogue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalogue.swift; sourceTree = "<group>"; };
 		DF3E40A52231C4CE00CF2231 /* CatalogueCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueCollectionViewController.swift; sourceTree = "<group>"; };
 		DF426E05224021D50045D7CD /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
+		DF426E0722412B070045D7CD /* GlobalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalState.swift; sourceTree = "<group>"; };
+		DF426E0922412CB20045D7CD /* CurnentStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurnentStates.swift; sourceTree = "<group>"; };
 		DF54B7002230184300E1CC97 /* Clothing-FireStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clothing-FireStore.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF54B7032230184300E1CC97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF54B7052230184300E1CC97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 				DF75D0BC22327E2F0097390F /* CatalogueViewController.swift */,
 				DF92ECF8223EF88C00F1AEA2 /* StoryboardNavigationViewController.swift */,
 				DFEBAE93223EFBDC00797BB6 /* StoryboardEnum.swift */,
+				DF426E0722412B070045D7CD /* GlobalState.swift */,
 			);
 			path = "Helper-Controllers";
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 				DF3E4093223022D900CF2231 /* Customer.swift */,
 				DF3E4095223023F400CF2231 /* CatalogueItem.swift */,
 				DF3E40A3223192C500CF2231 /* Catalogue.swift */,
+				DF426E0922412CB20045D7CD /* CurnentStates.swift */,
 			);
 			path = Datamodels;
 			sourceTree = "<group>";
@@ -365,9 +371,11 @@
 				DF75D0CB223520540097390F /* TopTableViewCell.swift in Sources */,
 				DF75D0BD22327E2F0097390F /* CatalogueViewController.swift in Sources */,
 				DF92ECF9223EF88C00F1AEA2 /* StoryboardNavigationViewController.swift in Sources */,
+				DF426E0A22412CB30045D7CD /* CurnentStates.swift in Sources */,
 				DF3E40A4223192C500CF2231 /* Catalogue.swift in Sources */,
 				DFEBAE94223EFBDC00797BB6 /* StoryboardEnum.swift in Sources */,
 				DF75D0BA223278A00097390F /* CatalogueTableViewCell.swift in Sources */,
+				DF426E0822412B070045D7CD /* GlobalState.swift in Sources */,
 				DF92ECC6223A79A400F1AEA2 /* ItemViewController.swift in Sources */,
 				DF426E06224021D50045D7CD /* KeychainItemAccessibility.swift in Sources */,
 			);

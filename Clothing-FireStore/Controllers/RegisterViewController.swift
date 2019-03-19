@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 class RegisterViewController: StoryboardNavigationViewController {
 
@@ -29,6 +30,8 @@ class RegisterViewController: StoryboardNavigationViewController {
     @IBAction func notNowButtonPressed(_ sender: UIBarButtonItem) {
         presentNextViewController(enumValue: .home)
     }
+    
+    //Atempts to signup new User based on firebase Authetification
     @IBAction func signupButtonPressed(_ sender: UIButton) {
         //presentNextViewController(enumValue: .home)
         if firstNameField.text?.count == 0 ||
@@ -43,12 +46,27 @@ class RegisterViewController: StoryboardNavigationViewController {
                 presentDefaultAlert(message: "Passwords Do Not Match")
             }
             else{
+                SVProgressHUD.show()
+                
+                //Firebase Authetification for new Users
                 Auth.auth().createUser(withEmail: emailField.text!, password: passwordField.text!, completion: { (user, error) in
                     if(error != nil){
+                        SVProgressHUD.dismiss()
                         self.presentDefaultAlert(message: "Process Could Not Be Finished Try Agian")
                     }
                     else{
+                        SVProgressHUD.dismiss()
+                        //uploads a user to the database with more information
                         self.uploadUserCoupleData()
+                        
+                        //Atempts to store new user as current user in KeyChain
+                        let emailSaved: Bool = KeychainWrapper.standard.set(self.emailField.text!, forKey:"currentEmail")
+                        let passwordSaved: Bool = KeychainWrapper.standard.set(self.passwordField.text!, forKey: "currentPassword")
+                        if emailSaved && passwordSaved{
+                            print("saved")
+                        }
+                        
+                        //Move to Home Screen
                         self.presentNextViewController(enumValue: .home)
                         
                     }
@@ -67,6 +85,8 @@ class RegisterViewController: StoryboardNavigationViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    //Function for uploading a coupled item in database to authrnticatd user
+    //Name,profile picture and more to come
     func uploadUserCoupleData(){
         let newUser = Database.database().reference().child("Users").child(Auth.auth().currentUser!.uid)
         
