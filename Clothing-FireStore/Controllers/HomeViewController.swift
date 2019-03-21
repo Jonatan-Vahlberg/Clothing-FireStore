@@ -104,10 +104,14 @@ extension HomeViewController{
 extension HomeViewController: NavigationalItems{
     
     func navigate(with index: Int) {
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = sb.instantiateViewController(withIdentifier: "itemSB") as! ItemViewController
+//        vc.catalogueItem = Catalogue.shared.get(for: index)
+//        present(vc, animated: true, completion: nil)
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "itemSB") as! ItemViewController
-        vc.catalogueItem = Catalogue.shared.get(for: index)
+        let vc = sb.instantiateViewController(withIdentifier: "catalogueSB") as! FilterdCatalogueViewController
         present(vc, animated: true, completion: nil)
+        CurrentStates.shared.catalogueState = GlobalState.catalogue
     }
     
     

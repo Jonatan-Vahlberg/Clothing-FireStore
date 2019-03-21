@@ -43,6 +43,13 @@ class Catalogue{
 //        return false
 //    }
     
+    func filter(using filterString: String){
+        
+    }
+//    func filter(using filterEnum: enum){
+//
+//    }
+    
     func getCatalogueFromDatabase(){
         let catalogueDataBase = Database.database().reference().child("Catalogue")
     

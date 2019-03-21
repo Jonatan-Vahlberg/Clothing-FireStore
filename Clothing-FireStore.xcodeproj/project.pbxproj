@@ -24,6 +24,7 @@
 		DF426E06224021D50045D7CD /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF426E05224021D50045D7CD /* KeychainItemAccessibility.swift */; };
 		DF426E0822412B070045D7CD /* GlobalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF426E0722412B070045D7CD /* GlobalState.swift */; };
 		DF426E0A22412CB30045D7CD /* CurnentStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF426E0922412CB20045D7CD /* CurnentStates.swift */; };
+		DF426E0E22413A510045D7CD /* FilterdCatalogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF426E0D22413A510045D7CD /* FilterdCatalogueViewController.swift */; };
 		DF54B7042230184300E1CC97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF54B7032230184300E1CC97 /* AppDelegate.swift */; };
 		DF54B7062230184300E1CC97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF54B7052230184300E1CC97 /* ViewController.swift */; };
 		DF54B7092230184300E1CC97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF54B7072230184300E1CC97 /* Main.storyboard */; };
@@ -64,6 +65,7 @@
 		DF426E05224021D50045D7CD /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
 		DF426E0722412B070045D7CD /* GlobalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalState.swift; sourceTree = "<group>"; };
 		DF426E0922412CB20045D7CD /* CurnentStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurnentStates.swift; sourceTree = "<group>"; };
+		DF426E0D22413A510045D7CD /* FilterdCatalogueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterdCatalogueViewController.swift; sourceTree = "<group>"; };
 		DF54B7002230184300E1CC97 /* Clothing-FireStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clothing-FireStore.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF54B7032230184300E1CC97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF54B7052230184300E1CC97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				DF3E409B22307E8800CF2231 /* RegisterViewController.swift */,
 				DF3E409D22307EA000CF2231 /* HomeViewController.swift */,
 				DF92ECC5223A79A400F1AEA2 /* ItemViewController.swift */,
+				DF426E0D22413A510045D7CD /* FilterdCatalogueViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				DF1A40752240207800EE2F87 /* KeychainWrapper.swift in Sources */,
 				DF3E409C22307E8800CF2231 /* RegisterViewController.swift in Sources */,
 				DF3E40A12231901100CF2231 /* ItemCollectionViewCell.swift in Sources */,
+				DF426E0E22413A510045D7CD /* FilterdCatalogueViewController.swift in Sources */,
 				DF3E409E22307EA000CF2231 /* HomeViewController.swift in Sources */,
 				DF54B7062230184300E1CC97 /* ViewController.swift in Sources */,
 				DF3E4096223023F400CF2231 /* CatalogueItem.swift in Sources */,

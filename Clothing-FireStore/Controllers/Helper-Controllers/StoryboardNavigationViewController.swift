@@ -14,11 +14,11 @@ class StoryboardNavigationViewController: UIViewController {
 
     func presentNextViewController(enumValue: StoryboardEnum){
         
-        
         var identifier = ""
         switch enumValue{
         case .home:
             identifier = "homeStoryboard"
+            CurrentStates.shared.catalogueState = GlobalState.home
             break
         case .register:
             identifier = "registerSB"
@@ -28,6 +28,7 @@ class StoryboardNavigationViewController: UIViewController {
             break
         case .catalogue:
             identifier = "catalogueSB"
+            CurrentStates.shared.catalogueState = GlobalState.catalogue
             break
         case .item:
             identifier = "itemSB"
@@ -40,9 +41,12 @@ class StoryboardNavigationViewController: UIViewController {
             break
         default:
             identifier = "homeStoryboard"
+            CurrentStates.shared.catalogueState = GlobalState.home
         }
+        
         let viewController = storyBoardRefrence.instantiateViewController(withIdentifier: identifier)
-        present(viewController, animated: true, completion: nil)
+        show(viewController, sender: self)
+        //present(viewController, animated: true, completion: nil)
     }
 
 }

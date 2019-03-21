@@ -41,7 +41,18 @@ extension CatalogueTableViewCell: UICollectionViewDataSource, UICollectionViewDe
     override func awakeFromNib() {
         super.awakeFromNib()
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .horizontal
+        
+        switch CurrentStates.shared.catalogueState{
+        case .home:
+            flowLayout.scrollDirection = .horizontal
+            break
+        case .catalogue:
+            flowLayout.scrollDirection = .vertical
+            break
+        default:
+            flowLayout.scrollDirection = .vertical
+        }
+        
         flowLayout.itemSize = CGSize(width: 120, height: 220)
         flowLayout.minimumLineSpacing = 5.0
         flowLayout.minimumInteritemSpacing = 5.0
@@ -52,10 +63,10 @@ extension CatalogueTableViewCell: UICollectionViewDataSource, UICollectionViewDe
         self.collectionView.register(UINib(nibName: "ItemCollectionViewCell" ,bundle:nil), forCellWithReuseIdentifier: collectionId)
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return getNumberOfSections()
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return getItemsForeachSection()
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -75,7 +86,7 @@ extension CatalogueTableViewCell: UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(0, 10, 0, 10)
+        return UIEdgeInsetsMake(0, 10, 10, 10)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -86,5 +97,21 @@ extension CatalogueTableViewCell: UICollectionViewDataSource, UICollectionViewDe
         }
     }
 
+    func getNumberOfSections() -> Int {
+        return 1
+    }
+    
+    func getItemsForeachSection() -> Int {
+        switch CurrentStates.shared.catalogueState{
+        case .home:
+            return 4
+        case .catalogue:
+            //var halved = Catalogue.shared.count() / 2
+            return Catalogue.shared.count()
+            
+        default:
+            return Catalogue.shared.count()
+        }
+    }
 }
 

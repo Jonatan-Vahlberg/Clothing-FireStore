@@ -10,11 +10,15 @@ import Foundation
 
 struct CurrentStates{
     
-    static let shared = CurrentStates()
+    static var shared = CurrentStates()
     
-    var catalogueState: GlobalState = .none
+    var catalogueState = GlobalState.none
     
     var loginState: Bool = false
+    
+//    func setCatalogueState(with State: GlobalState){
+//    }
+//    self.catalogueState = State
     
     private init(){
         

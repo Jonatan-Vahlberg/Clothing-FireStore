@@ -449,7 +449,7 @@
         <!--Catalogue-->
         <scene sceneID="Eht-FI-DsR">
             <objects>
-                <viewController storyboardIdentifier="catalogueSB" title="Catalogue" id="QIR-J2-o2j" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="catalogueSB" title="Catalogue" id="QIR-J2-o2j" customClass="FilterdCatalogueViewController" customModule="Clothing_FireStore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Acv-Lx-4Wy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -478,16 +478,28 @@
                                     <constraint firstAttribute="height" constant="20" id="6mR-gi-uwv"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ULD-ws-yp5">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="QIR-J2-o2j" id="tNW-9u-PzH"/>
+                                    <outlet property="delegate" destination="QIR-J2-o2j" id="jO3-nw-IsY"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ULD-ws-yp5" firstAttribute="leading" secondItem="HBH-mg-mgn" secondAttribute="leading" id="3Sq-JS-yXN"/>
                             <constraint firstItem="wKE-b2-vmr" firstAttribute="top" secondItem="ve6-EX-ipd" secondAttribute="bottom" id="4gS-3C-yaO"/>
                             <constraint firstItem="wKE-b2-vmr" firstAttribute="trailing" secondItem="HBH-mg-mgn" secondAttribute="trailing" id="55p-YV-1rj"/>
+                            <constraint firstItem="ULD-ws-yp5" firstAttribute="bottom" secondItem="HBH-mg-mgn" secondAttribute="bottom" id="Kuj-V8-M7x"/>
                             <constraint firstItem="wKE-b2-vmr" firstAttribute="top" secondItem="ve6-EX-ipd" secondAttribute="bottom" id="MYx-c7-lhr"/>
                             <constraint firstAttribute="trailing" secondItem="ve6-EX-ipd" secondAttribute="trailing" id="QP7-9z-xTf"/>
                             <constraint firstItem="ve6-EX-ipd" firstAttribute="leading" secondItem="Acv-Lx-4Wy" secondAttribute="leading" id="Qxx-i9-AqP"/>
                             <constraint firstItem="wKE-b2-vmr" firstAttribute="leading" secondItem="HBH-mg-mgn" secondAttribute="leading" id="fQ9-6N-IrA"/>
+                            <constraint firstItem="ULD-ws-yp5" firstAttribute="trailing" secondItem="HBH-mg-mgn" secondAttribute="trailing" id="nrS-Tg-bPx"/>
                             <constraint firstItem="ve6-EX-ipd" firstAttribute="top" secondItem="Acv-Lx-4Wy" secondAttribute="top" id="r6g-83-9ZT"/>
+                            <constraint firstItem="ULD-ws-yp5" firstAttribute="top" secondItem="wKE-b2-vmr" secondAttribute="bottom" id="uIK-Ii-pLT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HBH-mg-mgn"/>
                     </view>
@@ -496,6 +508,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Cart" id="mI0-NW-dTb"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="ULD-ws-yp5" id="zm2-UM-htQ"/>
                         <segue destination="p9a-jG-8Dc" kind="show" id="zTM-YA-t2j"/>
                     </connections>
                 </viewController>

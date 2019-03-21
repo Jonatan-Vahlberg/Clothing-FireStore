@@ -13,12 +13,36 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    //For non logged in users will only display screen once if exsists
+    let userDefaultKey = "seenScreenOnce"
+    
+    //refrence to NSUserDefaults
+    let userDefaults = UserDefaults.standard
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         print("Reached Config")
         FirebaseApp.configure()
         print("passed Config")
+        
+        let emailOfcurrentUser: String? = KeychainWrapper.standard.string(forKey:"currentEmail")
+        let passwordOfCurrentUser: String? = KeychainWrapper.standard.string(forKey:"currentPassword")
+        
+            if let email = emailOfcurrentUser,
+            let password = passwordOfCurrentUser{
+            //authenticates user if a current user has been saved to KeyChain
+            Auth.auth().signIn(withEmail: email, password: password, completion: nil)
+            setHomeAsRootController()
+        }
+        else if userDefaults.value(forKey: userDefaultKey) != nil {
+            //presents home screen
+            setHomeAsRootController()
+        }
+        else{
+            //Sets UserDefault for seen splash screen once
+            userDefaults.set("seenItOnce", forKey: userDefaultKey)
+        }
         return true
     }
 
@@ -40,6 +64,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
     
+    }
+    
+    func setHomeAsRootController(){
+        if let window = self.window{
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "homeStoryboard")
+            window.rootViewController = vc
+        }
     }
 
 

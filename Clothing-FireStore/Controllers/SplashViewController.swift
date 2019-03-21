@@ -22,27 +22,44 @@ class SplashViewController: StoryboardNavigationViewController {
         super.viewDidLoad()
         
         //Firebase Database refrence
-        let catalogueDataBase = Database.database().reference()
+        //let catalogueDataBase = Database.database().reference()
 
         //TODO: - Remove wierd firebase dependency
-        catalogueDataBase.child("test").setValue("testing")
-        catalogueDataBase.observe(DataEventType.value, with:{ (snapshot) in
-            print(snapshot.value)
-            //let snapValue = snapshot.value as! [String: Any?]
-
-        })
+//        catalogueDataBase.child("test").setValue("testing")
+//        catalogueDataBase.observe(DataEventType.value, with:{ (snapshot) in
+//            print(snapshot.value)
+//            //let snapValue = snapshot.value as! [String: Any?]
+//
+//        })
         print(Catalogue.shared.count())
         
         //Gets current users email and password from keychain if they are logged in
+//        let emailOfcurrentUser: String? = KeychainWrapper.standard.string(forKey:"currentEmail")
+//        let passwordOfCurrentUser: String? = KeychainWrapper.standard.string(forKey: "currentPassword")
+//        if let email = emailOfcurrentUser,
+//            let password = passwordOfCurrentUser{
+//            //authenticates user if a current user has been saved to KeyChain
+//            Auth.auth().signIn(withEmail: email, password: password, completion: nil)
+//            print("Goto home")
+//            presentNextViewController(enumValue: .home)
+//        }
+//        else if userDefaults.value(forKey: userDefaultKey) != nil {
+//            //presents home screen
+//            presentNextViewController(enumValue: .home)
+//        }
+//        else{
+//            //Sets UserDefault for seen splash screen once
+//            userDefaults.set("seenItOnce", forKey: userDefaultKey)
+//        }
+    }
+    override func viewDidAppear(_ animated: Bool) {
         let emailOfcurrentUser: String? = KeychainWrapper.standard.string(forKey:"currentEmail")
         let passwordOfCurrentUser: String? = KeychainWrapper.standard.string(forKey: "currentPassword")
         if let email = emailOfcurrentUser,
             let password = passwordOfCurrentUser{
             //authenticates user if a current user has been saved to KeyChain
             Auth.auth().signIn(withEmail: email, password: password, completion: nil)
-            print(Auth.auth().currentUser?.uid)
-            
-            //presents home screen
+            print("Goto home")
             presentNextViewController(enumValue: .home)
         }
         else if userDefaults.value(forKey: userDefaultKey) != nil {
@@ -53,6 +70,7 @@ class SplashViewController: StoryboardNavigationViewController {
             //Sets UserDefault for seen splash screen once
             userDefaults.set("seenItOnce", forKey: userDefaultKey)
         }
+
     }
 
     // Function for segueless navigation from splash screen controllers buttons
