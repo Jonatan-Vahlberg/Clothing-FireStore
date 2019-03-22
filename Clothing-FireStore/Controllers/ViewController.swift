@@ -8,16 +8,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: StoryboardNavigationViewController {
 
+    var timer = Timer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        timer = Timer .scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(checkDatabaseIntegrity), userInfo: nil, repeats: true)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+   @objc func checkDatabaseIntegrity() {
+        if Catalogue.shared.count() > 0{
+            timer.invalidate()
+            presentNextViewController(enumValue: .home)
+            
+        }
     }
 
 

@@ -71,6 +71,7 @@ extension CatalogueTableViewCell: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
             guard let item = Catalogue.shared.get(for: indexPath.item) else{
+                print("empty")
                 return UICollectionViewCell()
             }
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionId, for: indexPath) as! ItemCollectionViewCell

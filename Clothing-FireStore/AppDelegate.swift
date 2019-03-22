@@ -19,7 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //refrence to NSUserDefaults
     let userDefaults = UserDefaults.standard
-
+    
+    let group = DispatchGroup()
+    
+    var identifier = ""
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         print("Reached Config")
@@ -29,20 +32,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let emailOfcurrentUser: String? = KeychainWrapper.standard.string(forKey:"currentEmail")
         let passwordOfCurrentUser: String? = KeychainWrapper.standard.string(forKey:"currentPassword")
         
-            if let email = emailOfcurrentUser,
+        if let email = emailOfcurrentUser,
             let password = passwordOfCurrentUser{
-            //authenticates user if a current user has been saved to KeyChain
-            Auth.auth().signIn(withEmail: email, password: password, completion: nil)
-            setHomeAsRootController()
+                //authenticates user if a current user has been saved to KeyChain
+                Auth.auth().signIn(withEmail: email, password: password, completion: nil)
+            identifier = "logoSB"
         }
         else if userDefaults.value(forKey: userDefaultKey) != nil {
             //presents home screen
-            setHomeAsRootController()
+            identifier = "logoSB"
+            
         }
         else{
             //Sets UserDefault for seen splash screen once
             userDefaults.set("seenItOnce", forKey: userDefaultKey)
+            identifier = "splashSB"
         }
+        Catalogue.shared.getCatalogueFromDatabase()
+        showInitalController()
         return true
     }
 
@@ -66,10 +73,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     }
     
-    func setHomeAsRootController(){
+    func showInitalController(){
         if let window = self.window{
             let sb = UIStoryboard(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "homeStoryboard")
+            let vc = sb.instantiateViewController(withIdentifier: identifier)
             window.rootViewController = vc
         }
     }

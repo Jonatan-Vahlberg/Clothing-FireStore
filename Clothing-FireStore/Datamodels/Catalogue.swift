@@ -54,7 +54,7 @@ class Catalogue{
         let catalogueDataBase = Database.database().reference().child("Catalogue")
     
         catalogueDataBase.observe(.childAdded) { (snapshot) in
-            print(snapshot.value)
+            //print(snapshot.value)
             let snapValue = snapshot.value as! [String: Any?]
                 
             let id = snapValue["Id"] as! Int
@@ -70,7 +70,29 @@ class Catalogue{
         }
     }
     
+    func getInitialCatalogueFromDatabase(){
+        let catalogueDataBase = Database.database().reference().child("Catalogue")
+        
+        catalogueDataBase.observeSingleEvent(of: .childAdded, with: { (snapshot) in
+            //print(snapshot.value)
+            let snapValue = snapshot.value as! [String: Any?]
+            
+            let id = snapValue["Id"] as! Int
+            print(id)
+            let name = snapValue["Name"] as! String
+            let description = snapValue["Description"] as! String
+            let price = snapValue["Price"] as! Int
+            let stock = snapValue["Stock"] as! Int
+            
+            let item = CatalogueItem(id: id, name: name, price: price, description: description, stock: stock)
+            
+            self.itemList.append(item)
+            
+        })
+        
+    }
+    
     private init(){
-      getCatalogueFromDatabase()
+      //getCatalogueFromDatabase()
     }
 }

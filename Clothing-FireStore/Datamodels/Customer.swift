@@ -16,6 +16,8 @@ class Customer{
     var email: String
     private var dbID: String
     
+    var cart: [Int]?
+    
     init(fn: String, ln: String, email: String, dbID: String) {
         firstName = fn
         lastName = ln

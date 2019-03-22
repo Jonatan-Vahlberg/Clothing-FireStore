@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ItemViewController: UIViewController {
 
@@ -34,5 +35,12 @@ class ItemViewController: UIViewController {
         }
     }
 
-
+    @IBAction func addToCartPressed(_ sender: UIButton) {
+        if let  username = Auth.auth().currentUser?.uid{
+            let childRefrence = Database.database().reference().child("Users").child(username)
+            
+            childRefrence.child("Cart").child(String(catalogueItem!.id)).setValue(catalogueItem!.id)
+        }
+    }
+    
 }
