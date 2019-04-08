@@ -12,7 +12,7 @@ import Firebase
 class ItemViewController: UIViewController {
 
     var catalogueItem: CatalogueItem?
-    
+    var cart: [String:Int] = [String:Int]()
 
     @IBOutlet var imageView: UIImageView!
     
@@ -21,7 +21,30 @@ class ItemViewController: UIViewController {
     @IBOutlet var priceLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let username = Auth.auth().currentUser?.uid{
+            let userDb = Firestore.firestore().collection("Users").document(username)
+            userDb.getDocument{ (document, err) in
+                if let document = document, document.exists{
+                    let docData = document.data()
+                    if let cartData = docData!["Cart"] as? [String:Int]{
+                        print(cartData)
+                        if cartData != nil{
+                            for (key,value) in cartData{
+                                print("Key\(key) = \(value)")
+                                self.cart[key] = value
+                                
+                            }
+                        }
+                        
+                    }
+                 }
+                else{
+                     print("Error in getting Document: \(err)")
+                }
+            }
+            
+        }
+        
         if let item = catalogueItem {
             nameLabel.text = item.name
             priceLabel.text = " \(item.price) kr"
@@ -37,10 +60,27 @@ class ItemViewController: UIViewController {
 
     @IBAction func addToCartPressed(_ sender: UIButton) {
         if let  username = Auth.auth().currentUser?.uid{
-            let childRefrence = Database.database().reference().child("Users").child(username)
             
-            childRefrence.child("Cart").child(String(catalogueItem!.id)).setValue(catalogueItem!.id)
+            let db = Firestore.firestore()
+            let userRefrence = db.collection("Users").document(username)
+            if let item = catalogueItem{
+                if cart.isEmpty{
+                
+                    userRefrence.setData([String(item.id): 1 ], merge: true)
+                }
+                else if let val = cart[String(item.id)] {
+                    
+                    cart[String(item.id)] = val + 1
+                    userRefrence.setData(["Cart": cart], merge: true)
+                }
+                else{
+                    cart[String(item.id)] = 1
+                    userRefrence.setData(["Cart": cart], merge: true)
+                }
+            }
         }
+                    
     }
+    
     
 }

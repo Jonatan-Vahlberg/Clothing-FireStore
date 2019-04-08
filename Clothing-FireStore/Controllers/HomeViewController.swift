@@ -17,14 +17,22 @@ class HomeViewController: CatalogueViewController{
     
     //var catalogue = Catalogue()
     
-    @IBOutlet var menuBtn: UIBarButtonItem!
-    
     
     override func viewDidLoad() {
-        
-       
-        
         super.viewDidLoad()
+        
+//        let catalogueRef = Firestore.firestore().collection("Catalogue")
+//        for x in 0...(Catalogue.shared.count() - 1){
+//            if let item = Catalogue.shared.get(for: x){
+//                catalogueRef.document("\(item.id)").setData([
+//                    "name" : item.name,
+//                    "price" : item.price,
+//                    "description" : item.description,
+//                    "stock" : item.stock])
+//            }
+//            
+//            
+//        }
         
         tableView.register(UINib(nibName:"TopTableViewCell", bundle: nil), forCellReuseIdentifier: "topTableCell")
         
@@ -60,6 +68,10 @@ class HomeViewController: CatalogueViewController{
         }
         
     }
+    @IBAction func toggleMenu(_ sender: Any) {
+        
+        NotificationCenter.default.post(name: NSNotification.Name("toggleMenu"), object: nil)
+    }
 }
 //MARK: - Table View Overrides
 extension HomeViewController{
@@ -75,6 +87,7 @@ extension HomeViewController{
         if indexPath.row == 0{
             tableView.rowHeight = 116
             let cell = tableView.dequeueReusableCell(withIdentifier: "topTableCell", for: indexPath) as! TopTableViewCell
+            cell.delegate = self
             
             return cell
         }
@@ -116,6 +129,16 @@ extension HomeViewController: NavigationalItems{
 //        let vc = sb.instantiateViewController(withIdentifier: "catalogueSB") as! FilterdCatalogueViewController
 //        present(vc, animated: true, completion: nil)
 //        CurrentStates.shared.catalogueState = GlobalState.catalogue
+    }
+}
+
+extension HomeViewController: NavigationalCatalogue{
+    func navigateWith(searchTerm: String) {
+        presentNextViewController(enumValue: .catalogue(searchTerm))
+    }
+    
+    func navigateWith(category: String) {
+        presentNextViewController(enumValue: .catalogue(category))
     }
     
     

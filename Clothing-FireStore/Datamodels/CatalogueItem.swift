@@ -9,7 +9,7 @@
 import Foundation
 
 class CatalogueItem{
-    let id: Int
+    let id: String
     let name : String
     var price: Int
     var description: String
@@ -17,7 +17,7 @@ class CatalogueItem{
     var stock: Int
     
     //from database
-    init(id: Int,name: String, price: Int, description: String,stock: Int) {
+    init(id: String,name: String, price: Int, description: String,stock: Int) {
         self.id = id
         self.name = name
         self.price = price
@@ -31,7 +31,7 @@ class CatalogueItem{
         self.price = price
         self.description = description
         self.stock = stock
-        self.id = Int(arc4random_uniform(900000) + 100000)
+        self.id = String(arc4random_uniform(900000) + 100000)
         
     }
     

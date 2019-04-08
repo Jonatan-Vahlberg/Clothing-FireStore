@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class ViewController: StoryboardNavigationViewController {
 
@@ -15,6 +16,7 @@ class ViewController: StoryboardNavigationViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         timer = Timer .scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(checkDatabaseIntegrity), userInfo: nil, repeats: true)
+        self.view.backgroundColor = UIColor(gradientStyle:UIGradientStyle.topToBottom, withFrame:self.view.frame, andColors:[UIColor.black, UIColor.purple])
     }
 
     

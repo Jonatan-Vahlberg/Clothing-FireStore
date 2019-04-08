@@ -47,6 +47,9 @@ class FilterdCatalogueViewController: CatalogueViewController {
     
     
     }
+    @IBAction func toggleMenu(_ sender: UIBarButtonItem) {
+        NotificationCenter.default.post(name: NSNotification.Name("toggleMenu"), object: nil)
+    }
 }
 
 extension FilterdCatalogueViewController: NavigationalItems{

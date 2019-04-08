@@ -8,10 +8,17 @@
 
 import UIKit
 
+protocol NavigationalCatalogue{
+    func navigateWith(searchTerm: String)
+    func navigateWith(category: String)
+}
+
 class TopTableViewCell: UITableViewCell {
 
     @IBOutlet var collectionView: UICollectionView!
     let collectionId = "topBarCell"
+    var delegate: NavigationalCatalogue?
+    var categories = ["Skirts","Shoes","Shirts","Jackets","Extra"]
 
 //    override func setSelected(_ selected: Bool, animated: Bool) {
 //        super.setSelected(selected, animated: animated)
@@ -21,6 +28,9 @@ class TopTableViewCell: UITableViewCell {
 }
 
 extension TopTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
+    
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,14 +50,20 @@ extension TopTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return categories.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionId, for: indexPath) as! TopBarCollectionViewCell
+        
+        cell.nameLbl.text = categories[indexPath.row]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsetsMake(0, 5, 0, 5)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.navigateWith(category: categories[indexPath.item])
     }
 }

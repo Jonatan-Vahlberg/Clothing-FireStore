@@ -10,6 +10,8 @@ import UIKit
 
 class TopBarCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet var nameLbl: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

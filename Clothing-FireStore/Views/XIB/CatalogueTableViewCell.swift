@@ -92,10 +92,8 @@ extension CatalogueTableViewCell: UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("item \(indexPath.item)")
-        if(indexPath.item == 0){
-            delegate?.navigate(with: indexPath.item)
-            
-        }
+        
+        delegate?.navigate(with: indexPath.item)
     }
 
     func getNumberOfSections() -> Int {

@@ -16,12 +16,22 @@ class Customer{
     var email: String
     private var dbID: String
     
-    var cart: [Int]?
+    var cart: [String:Int]?
+    var purchases: [String]?
+    var favourites: [Int]?
+    
+    
     
     init(fn: String, ln: String, email: String, dbID: String) {
         firstName = fn
         lastName = ln
         self.email = email
         self.dbID = dbID
+    }
+    init() {
+        self.firstName = ""
+        self.lastName = ""
+        self.email = ""
+        self.dbID = ""
     }
 }

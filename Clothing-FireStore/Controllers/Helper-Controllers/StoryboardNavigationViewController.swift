@@ -17,7 +17,7 @@ class StoryboardNavigationViewController: UIViewController {
         var identifier = ""
         switch enumValue{
         case .home:
-            identifier = "homeStoryboard"
+            identifier = "homeContainerSB"
             CurrentStates.shared.catalogueState = GlobalState.home
             break
         case .register:
@@ -27,7 +27,7 @@ class StoryboardNavigationViewController: UIViewController {
             identifier = "loginSB"
             break
         case .catalogue:
-            identifier = "catalogueSB"
+            identifier = "catalogueContainerSB"
             CurrentStates.shared.catalogueState = GlobalState.catalogue
             break
         case .item:

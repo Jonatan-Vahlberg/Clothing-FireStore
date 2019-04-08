@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -29,24 +30,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         print("passed Config")
         
+        let db = Firestore.firestore()
+        
+        
+        
         let emailOfcurrentUser: String? = KeychainWrapper.standard.string(forKey:"currentEmail")
         let passwordOfCurrentUser: String? = KeychainWrapper.standard.string(forKey:"currentPassword")
         
         if let email = emailOfcurrentUser,
             let password = passwordOfCurrentUser{
                 //authenticates user if a current user has been saved to KeyChain
-                Auth.auth().signIn(withEmail: email, password: password, completion: nil)
+            Auth.auth().signIn(withEmail: email, password: password, completion: { (result, error) in
+                    CurrentStates.shared.getCurrentCustomer(fromDatabase:true)
+            })
             identifier = "logoSB"
         }
         else if userDefaults.value(forKey: userDefaultKey) != nil {
             //presents home screen
             identifier = "logoSB"
+            CurrentStates.shared.getCurrentCustomer(fromDatabase:false)
             
         }
         else{
             //Sets UserDefault for seen splash screen once
             userDefaults.set("seenItOnce", forKey: userDefaultKey)
             identifier = "splashSB"
+            CurrentStates.shared.getCurrentCustomer(fromDatabase:false)
         }
         Catalogue.shared.getCatalogueFromDatabase()
         showInitalController()

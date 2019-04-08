@@ -16,5 +16,5 @@ enum GlobalState{
     
     case category(String)
     
-    case seaeched(String)
+    case searched(String)
 }

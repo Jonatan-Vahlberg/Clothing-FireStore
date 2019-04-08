@@ -88,12 +88,19 @@ class RegisterViewController: StoryboardNavigationViewController {
     //Function for uploading a coupled item in database to authrnticatd user
     //Name,profile picture and more to come
     func uploadUserCoupleData(){
-        let newUser = Database.database().reference().child("Users").child(Auth.auth().currentUser!.uid)
         
-        newUser.child("Name").setValue("\(firstNameField.text!) \(lastNameField.text!)")
-        newUser.child("Email").setValue(emailField.text!)
-        newUser.child("ProfilePic").setValue(nil)
-        //newUser.child("Cart").setValue([Int:Int])
+        let db = Firestore.firestore()
+        db.collection("users").document(Auth.auth().currentUser!.uid).setData([
+            "Name": "\(firstNameField.text!) \(lastNameField.text!)",
+            "Email": emailField.text!
+            ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added)")
+            }
+        }
+        
     }
 
 }

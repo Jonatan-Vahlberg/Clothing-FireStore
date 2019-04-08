@@ -54,6 +54,9 @@
                 <constraint firstItem="FTh-fy-15a" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="lzw-wU-SGU"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="nameLbl" destination="r6r-2T-39m" id="EgI-xM-bCU"/>
+            </connections>
         </collectionViewCell>
     </objects>
 </document>
