@@ -82,5 +82,10 @@ class ItemViewController: UIViewController {
                     
     }
     
+    @IBAction func returnToPreviousVC(_ sender: UIBarButtonItem) {
+    }
+    @IBAction func menuBtnPressed(_ sender: UIBarButtonItem) {
+        NotificationCenter.default.post(name: NSNotification.Name("toggleMenu"), object: nil)
+    }
     
 }

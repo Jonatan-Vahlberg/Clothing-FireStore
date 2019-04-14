@@ -11,6 +11,7 @@ import UIKit
 class ContainerVC: UIViewController {
 
     @IBOutlet var menuXConstraint: NSLayoutConstraint!
+    var passedData: [Any]?
     
     var sideMenuOpen = false
     override func viewDidLoad() {
@@ -23,16 +24,28 @@ class ContainerVC: UIViewController {
         if sideMenuOpen{
             
             menuXConstraint.constant = -245
-            print("Slide Out")
+            print(menuXConstraint.constant)
         }
         else{
             menuXConstraint.constant = 0
-            print("Slide In")
+            print(menuXConstraint.constant)
         }
         UIView.animate(withDuration: 0.4) {
             self.view.layoutIfNeeded()
         }
         sideMenuOpen = !sideMenuOpen
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "containerToItem"{
+            let vc = segue.destination as! ItemViewController
+            
+            guard let item = passedData?.first as? CatalogueItem else{
+                return
+            }
+            vc.catalogueItem = item
+            print(item.name)
+        }
     }
 
     

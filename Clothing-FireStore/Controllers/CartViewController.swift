@@ -39,7 +39,14 @@ class CartViewController: StoryboardNavigationViewController {
         }
         finalPriceLbl.title = "\(finalPrice)kr"
     }
+    
+    @IBAction func menuBtnPressed(_ sender: UIBarButtonItem) {
+        NotificationCenter.default.post(name: NSNotification.Name("toggleMenu"), object: nil)
+    }
 
+    @IBAction func goToPayment(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "paymentModal", sender: self)
+    }
 }
 
 extension CartViewController: UITableViewDataSource, UITableViewDelegate{

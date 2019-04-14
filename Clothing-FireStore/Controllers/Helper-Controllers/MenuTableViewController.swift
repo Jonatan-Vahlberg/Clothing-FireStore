@@ -37,10 +37,10 @@ class MenuTableViewController: UITableViewController {
             CurrentStates.shared.catalogueState = GlobalState.catalogue
             break
         case .item:
-            identifier = "itemSB"
+            identifier = "itemContainerSB"
             break
         case .cart:
-            identifier = "cartSB"
+            identifier = "cartContainerSB"
             break
         case .profile:
             identifier = "profileSB"
