@@ -15,7 +15,7 @@ enum StoryboardEnum{
     
     case login
     
-    case catalogue(String)
+    case catalogue
     
     case item
     

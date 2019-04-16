@@ -9,24 +9,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Clothing-FireStore/Datamodels/Catalogue.swift"
-            timestampString = "575825461.758986"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "getCatalogueFromDatabase()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Clothing-FireStore/Controllers/Helper-Controllers/StoryboardNavigationViewController.swift"
-            timestampString = "576756024.253611"
+            timestampString = "577107738.2717561"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
@@ -42,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Clothing-FireStore/Controllers/Helper-Controllers/StoryboardNavigationViewController.swift"
-            timestampString = "576756024.2579989"
+            timestampString = "577107738.273173"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
@@ -58,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Clothing-FireStore/Controllers/Helper-Controllers/StoryboardNavigationViewController.swift"
-            timestampString = "576756024.258497"
+            timestampString = "577107738.273329"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -74,28 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Clothing-FireStore/Controllers/Helper-Controllers/StoryboardNavigationViewController.swift"
-            timestampString = "576756024.2588609"
+            timestampString = "577107738.273469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
             endingLineNumber = "48"
             landmarkName = "presentNextViewController(enumValue:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Clothing-FireStore/Views/XIB/CatalogueTableViewCell.swift"
-            timestampString = "576620909.526741"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -154,23 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Clothing-FireStore/Datamodels/CurnentStates.swift"
-            timestampString = "575825046.211138"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "getCurrentCustomer(fromDatabase:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Clothing-FireStore/Datamodels/CurnentStates.swift"
-            timestampString = "575825046.2112859"
+            timestampString = "577096636.8895659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -186,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Clothing-FireStore/Controllers/CartViewController.swift"
-            timestampString = "576756024.26222"
+            timestampString = "576951580.2734441"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,28 +154,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Clothing-FireStore/Datamodels/CurnentStates.swift"
-            timestampString = "575825046.212487"
+            timestampString = "577096636.889825"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "getCurrentCustomer(fromDatabase:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Clothing-FireStore/Controllers/CartViewController.swift"
-            timestampString = "576756024.262941"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -266,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Clothing-FireStore/Datamodels/Catalogue.swift"
-            timestampString = "575825461.786937"
+            timestampString = "577107738.274309"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "getCatalogueFromDatabase()"
             landmarkType = "7">
          </BreakpointContent>
@@ -282,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Clothing-FireStore/Datamodels/Catalogue.swift"
-            timestampString = "575825461.787219"
+            timestampString = "577107738.274508"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -330,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Clothing-FireStore/Controllers/CartViewController.swift"
-            timestampString = "576756024.264609"
+            timestampString = "576951580.274955"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -345,13 +281,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Clothing-FireStore/Controllers/Helper-Controllers/StoryboardNavigationViewController.swift"
-            timestampString = "576756024.265074"
+            filePath = "Clothing-FireStore/Controllers/Helper-Controllers/ContainerVC.swift"
+            timestampString = "577107738.274738"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "presentNextViewController(enumValue:)"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "toggleMenu()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -361,14 +297,241 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Clothing-FireStore/Controllers/Helper-Controllers/ContainerVC.swift"
-            timestampString = "576756024.265748"
+            filePath = "Clothing-FireStore/Controllers/DetailViewController.swift"
+            timestampString = "577096636.890893"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "toggleMenu()"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Clothing-FireStore/Views/XIB/TopTableViewCell.swift"
+            timestampString = "577107738.275053"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "NavigationalCatalogue"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Clothing_FireStore.TopTableViewCell.__deallocating_deinit"
+                  moduleName = "Clothing-FireStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zog-ii/Documents/Clothing-FireStore/Clothing-FireStore/Views/XIB/TopTableViewCell.swift"
+                  timestampString = "577099112.9636"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Clothing_FireStore.TopTableViewCell.__allocating_init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; Clothing_FireStore.TopTableViewCell"
+                  moduleName = "Clothing-FireStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zog-ii/Documents/Clothing-FireStore/Clothing-FireStore/Views/XIB/TopTableViewCell.swift"
+                  timestampString = "577099112.970282"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "13">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Clothing_FireStore.TopTableViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; Clothing_FireStore.TopTableViewCell"
+                  moduleName = "Clothing-FireStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zog-ii/Documents/Clothing-FireStore/Clothing-FireStore/Views/XIB/TopTableViewCell.swift"
+                  timestampString = "577099112.9745589"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Clothing_FireStore.TopTableViewCell.__allocating_init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;Clothing_FireStore.TopTableViewCell&gt;"
+                  moduleName = "Clothing-FireStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zog-ii/Documents/Clothing-FireStore/Clothing-FireStore/Views/XIB/TopTableViewCell.swift"
+                  timestampString = "577099112.979479"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Clothing_FireStore.TopTableViewCell.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;Clothing_FireStore.TopTableViewCell&gt;"
+                  moduleName = "Clothing-FireStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zog-ii/Documents/Clothing-FireStore/Clothing-FireStore/Views/XIB/TopTableViewCell.swift"
+                  timestampString = "577099112.984031"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "46">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Clothing-FireStore/Views/XIB/TopTableViewCell.swift"
+            timestampString = "577107738.275252"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "NavigationalCatalogue"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Clothing_FireStore.TopTableViewCell.__deallocating_deinit"
+                  moduleName = "Clothing-FireStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zog-ii/Documents/Clothing-FireStore/Clothing-FireStore/Views/XIB/TopTableViewCell.swift"
+                  timestampString = "577099115.824365"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Clothing_FireStore.TopTableViewCell.__allocating_init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; Clothing_FireStore.TopTableViewCell"
+                  moduleName = "Clothing-FireStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zog-ii/Documents/Clothing-FireStore/Clothing-FireStore/Views/XIB/TopTableViewCell.swift"
+                  timestampString = "577099115.828886"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "13">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Clothing_FireStore.TopTableViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; Clothing_FireStore.TopTableViewCell"
+                  moduleName = "Clothing-FireStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zog-ii/Documents/Clothing-FireStore/Clothing-FireStore/Views/XIB/TopTableViewCell.swift"
+                  timestampString = "577099115.832521"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Clothing_FireStore.TopTableViewCell.__allocating_init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;Clothing_FireStore.TopTableViewCell&gt;"
+                  moduleName = "Clothing-FireStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zog-ii/Documents/Clothing-FireStore/Clothing-FireStore/Views/XIB/TopTableViewCell.swift"
+                  timestampString = "577099115.836018"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Clothing_FireStore.TopTableViewCell.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;Clothing_FireStore.TopTableViewCell&gt;"
+                  moduleName = "Clothing-FireStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zog-ii/Documents/Clothing-FireStore/Clothing-FireStore/Views/XIB/TopTableViewCell.swift"
+                  timestampString = "577099115.839826"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "46">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Clothing-FireStore/Controllers/FilterdCatalogueViewController.swift"
+            timestampString = "577107738.275479"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "navigate(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "Yes"
+            filePath = "Clothing-FireStore/Controllers/Helper-Controllers/MenuTableViewController.swift"
+            timestampString = "577107738.2756571"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.Log">
+                  <ActionContent
+                     message = "&quot;reached&quot;"
+                     conveyanceType = "0">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

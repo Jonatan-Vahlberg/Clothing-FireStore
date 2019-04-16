@@ -47,20 +47,19 @@ struct CurrentStates{
                                     newUser.cart = cart
                                     
                                 }
-                                if let purchases = docData!["previousPurchases"] as? [String]{
-                                    newUser.purchases = purchases
-                                }
                                 if let favourites = docData!["favourites"] as? [Int]{
                                     newUser.favourites = favourites
                                 }
                                 
-                                print("USER Downloaded",newUser.cart)
                                 CurrentStates.currentCustomer = newUser
+                                getOrdersFromFirestore(withUID: uid)
                         }
                         
                         }
                     }
                 })
+                
+                
             }
             
         }
@@ -68,4 +67,29 @@ struct CurrentStates{
             CurrentStates.currentCustomer = Customer()
         }
     }
+}
+func getOrdersFromFirestore(withUID uid: String){
+    let userRef = Firestore.firestore().collection("Users").document(uid)
+    userRef.collection("orders").getDocuments(completion: { (documents, error) in
+        if let err = error {
+            
+        }
+        else{
+            for document in documents!.documents{
+                let docData = document.data()
+                if docData != nil{
+                    let name = docData["fullName"] as! String
+                    let orderNr = docData["orderNR"] as! Int
+                    let finalPrice = docData["finalprice"] as! Int
+                    let orderDate = docData["orderDate"] as! String
+                    let finalDate = docData["finalDate"] as! String
+                    let cardNr = docData["cardNR"] as! String
+                    
+                    let order = Order(name: name, orderNr: orderNr, orderDate: orderDate, finalDate: finalDate, finalPrice: finalPrice, cardNr: cardNr)
+                    
+                    CurrentStates.currentCustomer?.purchases.append(order)
+                }
+            }
+        }
+    })
 }

@@ -15,14 +15,16 @@ class CatalogueItem{
     var description: String
     //var special: ()-> Void?
     var stock: Int
+    var category = ""
     
     //from database
-    init(id: String,name: String, price: Int, description: String,stock: Int) {
+    init(id: String,name: String, price: Int, description: String,stock: Int, category: String) {
         self.id = id
         self.name = name
         self.price = price
         self.description = description
         self.stock = stock
+        self.category = category
         
     }
     //initial init

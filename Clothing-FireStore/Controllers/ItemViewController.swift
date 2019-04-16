@@ -65,8 +65,8 @@ class ItemViewController: UIViewController {
             let userRefrence = db.collection("Users").document(username)
             if let item = catalogueItem{
                 if cart.isEmpty{
-                
-                    userRefrence.setData([String(item.id): 1 ], merge: true)
+                    cart[String(item.id)] = 1
+                    userRefrence.setData(["Cart": cart ], merge: true)
                 }
                 else if let val = cart[String(item.id)] {
                     
@@ -83,6 +83,7 @@ class ItemViewController: UIViewController {
     }
     
     @IBAction func returnToPreviousVC(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
     }
     @IBAction func menuBtnPressed(_ sender: UIBarButtonItem) {
         NotificationCenter.default.post(name: NSNotification.Name("toggleMenu"), object: nil)

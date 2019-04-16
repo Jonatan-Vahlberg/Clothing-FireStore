@@ -37,7 +37,7 @@ class StoryboardNavigationViewController: UIViewController {
             identifier = "cartContainerSB"
             break
         case .profile:
-            identifier = "profileSB"
+            identifier = "profileContainerSB"
             break
         default:
             identifier = "homeStoryboard"
@@ -47,6 +47,11 @@ class StoryboardNavigationViewController: UIViewController {
         let viewController = storyBoardRefrence.instantiateViewController(withIdentifier: identifier)
         show(viewController, sender: self)
         //present(viewController, animated: true, completion: nil)
+    }
+    
+    func showSpesificCatalogueViewController(isCategory:Bool,searchString: String){
+        let viewController = storyBoardRefrence.instantiateViewController(withIdentifier: "catalogueContainerSB") as! ContainerVC
+        viewController.passedData = [searchString]
     }
 
 }

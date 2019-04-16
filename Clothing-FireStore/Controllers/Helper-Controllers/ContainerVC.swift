@@ -17,6 +17,9 @@ class ContainerVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(toggleMenu), name: Notification.Name("toggleMenu"), object: nil)
     }
     
@@ -24,11 +27,11 @@ class ContainerVC: UIViewController {
         if sideMenuOpen{
             
             menuXConstraint.constant = -245
-            print(menuXConstraint.constant)
+            
         }
         else{
             menuXConstraint.constant = 0
-            print(menuXConstraint.constant)
+            
         }
         UIView.animate(withDuration: 0.4) {
             self.view.layoutIfNeeded()
@@ -45,6 +48,14 @@ class ContainerVC: UIViewController {
             }
             vc.catalogueItem = item
             print(item.name)
+        }
+        else if segue.identifier == "goToCategory"{
+            let vc = segue.destination as! FilterdCatalogueViewController
+            
+            guard let searchString = passedData?.first as? String else{
+                return
+            }
+            
         }
     }
 

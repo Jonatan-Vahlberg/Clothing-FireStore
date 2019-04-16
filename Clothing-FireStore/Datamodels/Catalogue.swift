@@ -34,6 +34,26 @@ class Catalogue{
         return item
     }
     
+    func getFilterdCatalogue(byCategory: Bool,value: String) -> [CatalogueItem]{
+        var filteredCatalogue = [CatalogueItem]()
+        
+        for item in itemList{
+            if byCategory{
+                if item.category == value{
+                    filteredCatalogue.append(item)
+                }
+            }
+            else{
+                if item.name.contains(value){
+                    filteredCatalogue.append(item)
+                }
+            }
+            
+        }
+        
+        return filteredCatalogue
+    }
+    
     func add(to item: CatalogueItem){
         itemList.append(item)
     }
@@ -70,9 +90,9 @@ class Catalogue{
                         let id = docData["id"] as? String,
                         let price = docData["price"] as? Int,
                         let stock = docData["stock"] as? Int,
-                        let desc = docData["description"] as? String{
-                        
-                        let item = CatalogueItem(id: id, name: name, price: price, description: desc, stock: stock)
+                        let desc = docData["description"] as? String,
+                        let category = docData["category"] as? String{
+                        let item = CatalogueItem(id: id, name: name, price: price, description: desc, stock: stock, category: category)
                         
                         self.itemList.append(item)
                     }
@@ -81,51 +101,8 @@ class Catalogue{
             }
             
         }
-        //let catalogueDataBase = Database.database().reference().child("Catalogue")
-//
-//        catalogueDataBase.observe(.childAdded) { (snapshot) in
-//            //print(snapshot.value)
-//            let snapValue = snapshot.value as! [String: Any?]
-//
-//            let id = snapValue["Id"] as! Int
-//            print(id)
-//            let name = snapValue["Name"] as! String
-//            let description = snapValue["Description"] as! String
-//            let price = snapValue["Price"] as! Int
-//            let stock = snapValue["Stock"] as! Int
-//
-//            let item = CatalogueItem(id: id, name: name, price: price, description: description, stock: stock)
-//
-//            self.itemList.append(item)
-//        }
-        
-        
     }
-    
-//    func getInitialCatalogueFromDatabase(){
-//        let catalogueDataBase = Database.database().reference().child("Catalogue")
-//
-//        catalogueDataBase.observeSingleEvent(of: .childAdded, with: { (snapshot) in
-//            //print(snapshot.value)
-//            let snapValue = snapshot.value as! [String: Any?]
-//
-//            let id = snapValue["Id"] as! Int
-//            print(id)
-//            let name = snapValue["Name"] as! String
-//            let description = snapValue["Description"] as! String
-//            let price = snapValue["Price"] as! Int
-//            let stock = snapValue["Stock"] as! Int
-//
-//            let item = CatalogueItem(id: id, name: name, price: price, description: description, stock: stock)
-//
-//            self.itemList.append(item)
-//
-//        })
-//
-//
-//
-//    }
-    
+        
     private init(){
       //getCatalogueFromDatabase()
     }

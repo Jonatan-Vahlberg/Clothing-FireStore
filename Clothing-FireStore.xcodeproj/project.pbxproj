@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3F910265D691289BE6FB986E /* Pods_Clothing_FireStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C969C42A93AEE7814E2FE2 /* Pods_Clothing_FireStore.framework */; };
 		DF1A40752240207800EE2F87 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A40742240207800EE2F87 /* KeychainWrapper.swift */; };
+		DF2535CF22648C9800271BDE /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2535CD22648C9800271BDE /* OrderTableViewCell.swift */; };
+		DF2535D022648C9800271BDE /* OrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF2535CE22648C9800271BDE /* OrderTableViewCell.xib */; };
+		DF2535D22264986200271BDE /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2535D12264986200271BDE /* Order.swift */; };
+		DF2535D42264997D00271BDE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2535D32264997D00271BDE /* DetailViewController.swift */; };
 		DF33338C22368B6B00F7B271 /* MenuViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF33338A22368B6B00F7B271 /* MenuViewViewController.swift */; };
 		DF33338D22368B6B00F7B271 /* MenuViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF33338B22368B6B00F7B271 /* MenuViewViewController.xib */; };
 		DF3E4094223022D900CF2231 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3E4093223022D900CF2231 /* Customer.swift */; };
@@ -40,6 +44,7 @@
 		DF75D0CC223520540097390F /* TopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF75D0CA223520540097390F /* TopTableViewCell.xib */; };
 		DF75D0CF223524E80097390F /* TopBarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF75D0CD223524E80097390F /* TopBarCollectionViewCell.swift */; };
 		DF75D0D0223524E80097390F /* TopBarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF75D0CE223524E80097390F /* TopBarCollectionViewCell.xib */; };
+		DF7DE20B226396FE009DABFD /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7DE20A226396FE009DABFD /* ProfileTableViewController.swift */; };
 		DF92ECC6223A79A400F1AEA2 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF92ECC5223A79A400F1AEA2 /* ItemViewController.swift */; };
 		DF92ECF9223EF88C00F1AEA2 /* StoryboardNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF92ECF8223EF88C00F1AEA2 /* StoryboardNavigationViewController.swift */; };
 		DFBEC351224E2B7D006814F2 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBEC34F224E2B7D006814F2 /* CartTableViewCell.swift */; };
@@ -56,6 +61,10 @@
 		B19510F48287BE2B74B09101 /* Pods-Clothing-FireStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clothing-FireStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clothing-FireStore/Pods-Clothing-FireStore.debug.xcconfig"; sourceTree = "<group>"; };
 		C1C969C42A93AEE7814E2FE2 /* Pods_Clothing_FireStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clothing_FireStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF1A40742240207800EE2F87 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeychainWrapper.swift; path = "../New Group/KeychainWrapper.swift"; sourceTree = "<group>"; };
+		DF2535CD22648C9800271BDE /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
+		DF2535CE22648C9800271BDE /* OrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTableViewCell.xib; sourceTree = "<group>"; };
+		DF2535D12264986200271BDE /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		DF2535D32264997D00271BDE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DF33338A22368B6B00F7B271 /* MenuViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewViewController.swift; sourceTree = "<group>"; };
 		DF33338B22368B6B00F7B271 /* MenuViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewViewController.xib; sourceTree = "<group>"; };
 		DF3E4093223022D900CF2231 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
@@ -89,6 +98,7 @@
 		DF75D0CA223520540097390F /* TopTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopTableViewCell.xib; sourceTree = "<group>"; };
 		DF75D0CD223524E80097390F /* TopBarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarCollectionViewCell.swift; sourceTree = "<group>"; };
 		DF75D0CE223524E80097390F /* TopBarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopBarCollectionViewCell.xib; sourceTree = "<group>"; };
+		DF7DE20A226396FE009DABFD /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		DF92ECC5223A79A400F1AEA2 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		DF92ECF8223EF88C00F1AEA2 /* StoryboardNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardNavigationViewController.swift; sourceTree = "<group>"; };
 		DFBEC34F224E2B7D006814F2 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
@@ -194,6 +204,8 @@
 				DF33338B22368B6B00F7B271 /* MenuViewViewController.xib */,
 				DFBEC34F224E2B7D006814F2 /* CartTableViewCell.swift */,
 				DFBEC350224E2B7D006814F2 /* CartTableViewCell.xib */,
+				DF2535CD22648C9800271BDE /* OrderTableViewCell.swift */,
+				DF2535CE22648C9800271BDE /* OrderTableViewCell.xib */,
 			);
 			path = XIB;
 			sourceTree = "<group>";
@@ -206,6 +218,7 @@
 				DF3E4095223023F400CF2231 /* CatalogueItem.swift */,
 				DF3E40A3223192C500CF2231 /* Catalogue.swift */,
 				DF426E0922412CB20045D7CD /* CurnentStates.swift */,
+				DF2535D12264986200271BDE /* Order.swift */,
 			);
 			path = Datamodels;
 			sourceTree = "<group>";
@@ -222,6 +235,8 @@
 				DF92ECC5223A79A400F1AEA2 /* ItemViewController.swift */,
 				DF426E0D22413A510045D7CD /* FilterdCatalogueViewController.swift */,
 				DFBEC353224E3ED8006814F2 /* CartViewController.swift */,
+				DF7DE20A226396FE009DABFD /* ProfileTableViewController.swift */,
+				DF2535D32264997D00271BDE /* DetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -312,6 +327,7 @@
 				DF3E40A22231901100CF2231 /* ItemCollectionViewCell.xib in Resources */,
 				DF75D0CC223520540097390F /* TopTableViewCell.xib in Resources */,
 				DF75D0BB223278A00097390F /* CatalogueTableViewCell.xib in Resources */,
+				DF2535D022648C9800271BDE /* OrderTableViewCell.xib in Resources */,
 				DF54B70B2230184300E1CC97 /* Assets.xcassets in Resources */,
 				DFBEC352224E2B7D006814F2 /* CartTableViewCell.xib in Resources */,
 				DF54B7092230184300E1CC97 /* Main.storyboard in Resources */,
@@ -385,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF3E409A22307E7700CF2231 /* LoginViewController.swift in Sources */,
+				DF2535D42264997D00271BDE /* DetailViewController.swift in Sources */,
 				DF75D0C5223516640097390F /* BannerTableViewCell.swift in Sources */,
 				DF3E4094223022D900CF2231 /* Customer.swift in Sources */,
 				DF1A40752240207800EE2F87 /* KeychainWrapper.swift in Sources */,
@@ -396,11 +413,14 @@
 				DF54B7062230184300E1CC97 /* ViewController.swift in Sources */,
 				DFBEC351224E2B7D006814F2 /* CartTableViewCell.swift in Sources */,
 				DF3E4096223023F400CF2231 /* CatalogueItem.swift in Sources */,
+				DF7DE20B226396FE009DABFD /* ProfileTableViewController.swift in Sources */,
 				DFD676CA225F522E004C0DC3 /* PaymentPopupViewController.swift in Sources */,
 				DF33338C22368B6B00F7B271 /* MenuViewViewController.swift in Sources */,
+				DF2535D22264986200271BDE /* Order.swift in Sources */,
 				DF75D0CF223524E80097390F /* TopBarCollectionViewCell.swift in Sources */,
 				DF54B7042230184300E1CC97 /* AppDelegate.swift in Sources */,
 				DF3E409822307E5100CF2231 /* SplashViewController.swift in Sources */,
+				DF2535CF22648C9800271BDE /* OrderTableViewCell.swift in Sources */,
 				DF3E40A62231C4CE00CF2231 /* CatalogueCollectionViewController.swift in Sources */,
 				DF75D0CB223520540097390F /* TopTableViewCell.swift in Sources */,
 				DF75D0BD22327E2F0097390F /* CatalogueViewController.swift in Sources */,

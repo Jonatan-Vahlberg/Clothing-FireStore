@@ -14,7 +14,18 @@ enum GlobalState{
     
     case catalogue
     
-    case category(String)
+    case category(type: String)
     
-    case searched(String)
+    case searched(string: String)
+    
+    func get() -> String{
+        switch self{
+        case .category(let type):
+            return type
+        case .searched(let searched):
+            return searched
+        default:
+            return ""
+        }
+    }
 }

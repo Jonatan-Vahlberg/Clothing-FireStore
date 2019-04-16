@@ -14,7 +14,7 @@ protocol NavigationalCatalogue{
 }
 
 class TopTableViewCell: UITableViewCell {
-
+    
     @IBOutlet var collectionView: UICollectionView!
     let collectionId = "topBarCell"
     var delegate: NavigationalCatalogue?
@@ -67,3 +67,4 @@ extension TopTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate
         delegate?.navigateWith(category: categories[indexPath.item])
     }
 }
+

@@ -9,10 +9,11 @@
 import UIKit
 import Firebase
 
-class HomeViewController: CatalogueViewController{
+class HomeViewController: CatalogueViewController, UISearchControllerDelegate{
     
     
-
+    let searchController = UISearchController(searchResultsController: nil)
+    var searchString = ""
     @IBOutlet var tableView: UITableView!
     
     //var catalogue = Catalogue()
@@ -21,18 +22,10 @@ class HomeViewController: CatalogueViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let catalogueRef = Firestore.firestore().collection("Catalogue")
-//        for x in 0...(Catalogue.shared.count() - 1){
-//            if let item = Catalogue.shared.get(for: x){
-//                catalogueRef.document("\(item.id)").setData([
-//                    "name" : item.name,
-//                    "price" : item.price,
-//                    "description" : item.description,
-//                    "stock" : item.stock])
-//            }
-//            
-//            
-//        }
+        searchController.delegate = self
+        searchController.searchBar.placeholder = "Search for items"
+        searchController.searchBar.sizeToFit()
+        tableView.tableHeaderView = searchController.searchBar
         
         tableView.register(UINib(nibName:"TopTableViewCell", bundle: nil), forCellReuseIdentifier: "topTableCell")
         
@@ -72,6 +65,18 @@ class HomeViewController: CatalogueViewController{
         
         NotificationCenter.default.post(name: NSNotification.Name("toggleMenu"), object: nil)
     }
+
+    func didDismissSearchController(_ searchController: UISearchController) {
+        if searchString != ""{
+            navigateWith(searchTerm: searchString)
+        }
+    }
+    func willDismissSearchController(_ searchController: UISearchController) {
+        if let text = searchController.searchBar.text{
+            searchString = text
+        }
+    }
+
 }
 //MARK: - Table View Overrides
 extension HomeViewController{
@@ -92,7 +97,7 @@ extension HomeViewController{
             return cell
         }
         else if indexPath.row == 1{
-            tableView.rowHeight = 200
+            tableView.rowHeight = (self.view.frame.height / 4)
             let cell = tableView.dequeueReusableCell(withIdentifier: "bannerCell", for: indexPath) as! BannerTableViewCell
             
             cell.bannerText.text = "Get The new Spring Collection"
@@ -118,6 +123,8 @@ extension HomeViewController{
     }
 }
 
+
+
 extension HomeViewController: NavigationalItems{
     
     func navigate(with index: Int) {
@@ -126,15 +133,27 @@ extension HomeViewController: NavigationalItems{
         vc.passedData = [Catalogue.shared.get(for: index)]
         show(vc, sender: self)
     }
+    func navigate(with item: CatalogueItem) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "itemContainerSB") as! ContainerVC
+        vc.passedData = [item]
+        show(vc, sender: self)
+    }
 }
 
 extension HomeViewController: NavigationalCatalogue{
     func navigateWith(searchTerm: String) {
-        presentNextViewController(enumValue: .catalogue(searchTerm))
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "catalogueContainerSB")
+        CurrentStates.shared.catalogueState = .searched(string: searchTerm)
+        show(vc, sender: self)
     }
     
     func navigateWith(category: String) {
-        presentNextViewController(enumValue: .catalogue(category))
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "catalogueContainerSB")
+        CurrentStates.shared.catalogueState = .category(type: category)
+        show(vc, sender: self)
     }
     
     

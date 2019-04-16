@@ -10,6 +10,7 @@ import UIKit
 
 protocol NavigationalItems{
     func navigate(with index: Int)
+    func navigate(with item: CatalogueItem)
 }
 
 class CatalogueTableViewCell: UITableViewCell{
@@ -18,7 +19,8 @@ class CatalogueTableViewCell: UITableViewCell{
     @IBOutlet var collectionView: UICollectionView!
     
     let collectionId = "smallItemCell"
-    
+    var filteredCatalogue = [CatalogueItem]()
+    var filtered = false
     
     var delegate: NavigationalItems?
     
@@ -49,6 +51,18 @@ extension CatalogueTableViewCell: UICollectionViewDataSource, UICollectionViewDe
         case .catalogue:
             flowLayout.scrollDirection = .vertical
             break
+        case .category:
+            flowLayout.scrollDirection = .vertical
+            filteredCatalogue = Catalogue.shared.getFilterdCatalogue(byCategory: true, value: CurrentStates.shared.catalogueState.get())
+            filtered = true
+            break
+            
+        case .searched:
+            flowLayout.scrollDirection = .vertical
+            filteredCatalogue = Catalogue.shared.getFilterdCatalogue(byCategory: false, value: CurrentStates.shared.catalogueState.get())
+            filtered = true
+            break
+            
         default:
             flowLayout.scrollDirection = .vertical
         }
@@ -69,19 +83,24 @@ extension CatalogueTableViewCell: UICollectionViewDataSource, UICollectionViewDe
         return getItemsForeachSection()
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionId, for: indexPath) as! ItemCollectionViewCell
+        if filtered{
+            let item = filteredCatalogue[indexPath.item]
+                cell.itemName.text = item.name
+                cell.itemPrice.text = "\(item.price) kr"
+            
+        }
+        else{
             guard let item = Catalogue.shared.get(for: indexPath.item) else{
                 print("empty")
                 return UICollectionViewCell()
             }
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionId, for: indexPath) as! ItemCollectionViewCell
             cell.itemName.text = item.name
             cell.itemPrice.text = "\(item.price) kr"
+        }
+        
+        
             return cell
-//        }else{
-//           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionId, for: indexPath) as! ItemCollectionViewCell
-//            return cell
-//        }
         
         
     }
@@ -91,9 +110,14 @@ extension CatalogueTableViewCell: UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("item \(indexPath.item)")
+    
+        if filtered{
+            delegate?.navigate(with: filteredCatalogue[indexPath.item])
+        }
+        else{
+            delegate?.navigate(with: indexPath.item)
+        }
         
-        delegate?.navigate(with: indexPath.item)
     }
 
     func getNumberOfSections() -> Int {
@@ -107,10 +131,17 @@ extension CatalogueTableViewCell: UICollectionViewDataSource, UICollectionViewDe
         case .catalogue:
             //var halved = Catalogue.shared.count() / 2
             return Catalogue.shared.count()
-            
+        case .category:
+            return filteredCatalogue.count
+        case .searched:
+            return filteredCatalogue.count
         default:
             return Catalogue.shared.count()
         }
     }
+
+    
+    
 }
+
 

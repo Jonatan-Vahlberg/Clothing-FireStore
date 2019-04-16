@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class PaymentPopupViewController: StoryboardNavigationViewController {
+    
+    var finalPrice = 0
+    
     @IBOutlet var textFields: [UITextField]!
     @IBOutlet var topLbl: UILabel!
     @IBOutlet var fullNameField: UITextField!
@@ -33,7 +37,36 @@ class PaymentPopupViewController: StoryboardNavigationViewController {
             }
             let fullName = fullNameField.text
             let cardNumber = enshroud(cardNumber: accNumberField.text!)
-            let monthYear = "\(monthField)/\(yearField)"
+            let monthYear = "\(monthField.text!)/\(yearField.text!)"
+            let orderNumber = Int(arc4random_uniform(9999999) + 1000000)
+            let orderDate = Date.getCurrentDate(fromFormat: "yyyy-MM-dd HH:mm")
+            let finalDate = Date.getDateFromToday(fromFormat: "yyyy-MM-dd", daysInFuture: Int(arc4random_uniform(21) + 7))
+            if let userID = Auth.auth().currentUser?.uid{
+                Firestore.firestore().collection("Users").document(userID).collection("orders").addDocument(data:
+                    ["fullName": fullName,
+                     "cardNR": cardNumber,
+                     "monthYear": monthYear,
+                     "orderNR": orderNumber,
+                     "orderDate": orderDate,
+                     "finalDate": finalDate,
+                     "finalprice": finalPrice], completion: { (err) in
+                        if err != nil{
+                        self.presentDefaultAlert(message: "Something Went Wrong With order Please Check Your Internet Connection")
+                        }
+                        else{
+                            guard let user = CurrentStates.currentCustomer else{
+                                return
+                            }
+                            let userRef = Firestore.firestore().collection("Users").document(userID)
+                            userRef.setData(["email":user.email,
+                                             "firstName":user.firstName,
+                                             "lastName": user.lastName], merge: false)
+                            CurrentStates.currentCustomer?.cart = [:]
+                            self.dismiss(animated: true, completion: nil)
+                        }
+                })
+                
+            }
             
             
         }
@@ -74,5 +107,20 @@ class PaymentPopupViewController: StoryboardNavigationViewController {
         newCardString += num
         print(cardNumber,newCardString)
         return newCardString
+    }
+}
+extension Date{
+    static func getCurrentDate(fromFormat format: String) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: Date())
+    }
+    static func getDateFromToday(fromFormat format: String, daysInFuture days: Int) -> String{
+        if let futureDate = Calendar.current.date(byAdding: .day, value: days, to: Date()){
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = format
+            return dateFormatter.string(from: futureDate)
+        }
+        return "No Final Date Set Yet"
     }
 }

@@ -18,17 +18,18 @@ class CartViewController: StoryboardNavigationViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
         tableView.register(UINib(nibName: "CartTableViewCell" ,bundle: nil), forCellReuseIdentifier: "cartCell")
         tableView.rowHeight = 80
         tableView.separatorStyle = .none
+        tableView.reloadData()
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         
         if let cart = CurrentStates.currentCustomer?.cart{
             
             for (key,value) in cart{
-                print("LOOK FOR THIS",key)
                 if let item = Catalogue.shared.get(ForID: key){
                     cartArray.append(item)
                     cartAmount.append(value)
@@ -38,6 +39,7 @@ class CartViewController: StoryboardNavigationViewController {
             tableView.reloadData()
         }
         finalPriceLbl.title = "\(finalPrice)kr"
+        tableView.reloadData()
     }
     
     @IBAction func menuBtnPressed(_ sender: UIBarButtonItem) {
@@ -46,6 +48,13 @@ class CartViewController: StoryboardNavigationViewController {
 
     @IBAction func goToPayment(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "paymentModal", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "paymentModal"{
+            let vc = segue.destination as! PaymentPopupViewController
+            vc.finalPrice = finalPrice
+        }
     }
 }
 
@@ -83,6 +92,8 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     
+    
+    
 }
 
 extension CartViewController: cartItemControll{
@@ -95,6 +106,7 @@ extension CartViewController: cartItemControll{
     
     func removeTheItem(atRow row: Int) {
         cartArray.remove(at: row)
+        updateCart()
         tableView.reloadData()
     }
     
@@ -108,13 +120,17 @@ extension CartViewController{
     func updateCart(){
         if let uid = Auth.auth().currentUser?.uid{
             var dict = [String:Int]()
+            CurrentStates.currentCustomer?.cart = [:]
             for x in 0...(cartArray.count - 1){
                 let id = cartArray[x].id
                 let amount = cartAmount[x]
                 dict[id] = amount
+                CurrentStates.currentCustomer?.cart![cartArray[x].id] = cartAmount[x]
             }
             let userRefrence = Firestore.firestore().collection("Users").document(uid)
             userRefrence.setData(["Cart": dict], merge: true)
+            
         }
     }
+    
 }

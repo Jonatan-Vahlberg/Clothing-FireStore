@@ -7,14 +7,19 @@
 //
 
 import UIKit
+import Firebase
 
 class MenuTableViewController: UITableViewController {
 
     
+    @IBOutlet var loginLbl: UILabel!
     let storyBoardRefrence = UIStoryboard(name: "Main", bundle: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if Auth.auth().currentUser != nil{
+           loginLbl.text = "Profile"
+        }
         
     }
 
@@ -43,13 +48,13 @@ class MenuTableViewController: UITableViewController {
             identifier = "cartContainerSB"
             break
         case .profile:
-            identifier = "profileSB"
+            identifier = "profileContainerSB"
             break
         default:
             identifier = "homeStoryboard"
             CurrentStates.shared.catalogueState = GlobalState.home
         }
-        
+        NotificationCenter.default.post(name: NSNotification.Name("toggleMenu"), object: nil)
         let viewController = storyBoardRefrence.instantiateViewController(withIdentifier: identifier)
         show(viewController, sender: self)
     }
@@ -62,7 +67,7 @@ class MenuTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        
         return 6
     }
     
@@ -71,6 +76,7 @@ class MenuTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Reached")
         switch indexPath.row{
         case 0:
             presentNextViewController(enumValue: .home)
@@ -79,13 +85,12 @@ class MenuTableViewController: UITableViewController {
             presentNextViewController(enumValue: .cart)
             break;
         case 2:
-            presentNextViewController(enumValue: .catalogue(""))
-            break;
-        case 1:
-            //Discount presentNextViewController(enumValue: .discount)
-            print("discount")
+            presentNextViewController(enumValue: .catalogue)
             break;
         case 3:
+            presentNextViewController(enumValue: .home)
+            break;
+        case 4:
             if userIsLogedIn(){
                 presentNextViewController(enumValue: .profile)
             }
@@ -93,9 +98,7 @@ class MenuTableViewController: UITableViewController {
                 presentNextViewController(enumValue: .login)
             }
             break;
-        case 4:
-            presentNextViewController(enumValue: .home)
-            break;
+        
         case 5:
             presentNextViewController(enumValue: .home)
             break;
@@ -107,6 +110,9 @@ class MenuTableViewController: UITableViewController {
     }
     
     func userIsLogedIn() -> Bool{
+        if let user = Auth.auth().currentUser{
+            return true
+        }
         return false
     }
 

@@ -17,7 +17,7 @@ class Customer{
     private var dbID: String
     
     var cart: [String:Int]?
-    var purchases: [String]?
+    var purchases = [Order]()
     var favourites: [Int]?
     
     
