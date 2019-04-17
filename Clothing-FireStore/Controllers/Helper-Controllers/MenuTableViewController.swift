@@ -20,6 +20,7 @@ class MenuTableViewController: UITableViewController {
         if Auth.auth().currentUser != nil{
            loginLbl.text = "Profile"
         }
+        tableView.allowsSelection = true
         
     }
 
@@ -106,6 +107,7 @@ class MenuTableViewController: UITableViewController {
             presentNextViewController(enumValue: .home)
             break;
         }
+        tableView.deselectRow(at: indexPath, animated: true)
         
     }
     

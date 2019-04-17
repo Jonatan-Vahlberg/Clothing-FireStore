@@ -47,7 +47,22 @@ class CartViewController: StoryboardNavigationViewController {
     }
 
     @IBAction func goToPayment(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "paymentModal", sender: self)
+        if let user = Auth.auth().currentUser{
+            performSegue(withIdentifier: "paymentModal", sender: self)
+        }
+        else{
+            let alert = UIAlertController(title: "Unable to Continue With Purchase", message: "Due to not being logged in the item can't be added to cart or paid for.", preferredStyle: .alert)
+            let loginAction = UIAlertAction(title: "Login/Register", style: .default, handler: { (action) in
+                self.presentNextViewController(enumValue: .login)
+            })
+            let notNowAction = UIAlertAction(title: "Not Now", style: .default, handler: { (action) in
+                self.dismiss(animated: true, completion: nil)
+            })
+            alert.addAction(loginAction)
+            alert.addAction(notNowAction)
+            present(alert, animated: true, completion: nil)
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -75,6 +90,10 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate{
             cell.priceLbl.text = ("\(item.price) * \(cell.amount) = \(priceTimesAmount) kr")
             cell.removeBtn.tag = indexPath.row
             cell.delegate = self
+            if let image = UIImage(named:item.image){
+                cell.itemImageView.image = image
+            }
+            
         }
         calculateFinalPrice()
         

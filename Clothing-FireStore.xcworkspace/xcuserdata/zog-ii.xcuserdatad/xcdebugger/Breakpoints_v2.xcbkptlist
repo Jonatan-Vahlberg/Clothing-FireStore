@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Clothing-FireStore/Controllers/Helper-Controllers/StoryboardNavigationViewController.swift"
-            timestampString = "577107738.2717561"
+            timestampString = "577111745.8212301"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Clothing-FireStore/Controllers/Helper-Controllers/StoryboardNavigationViewController.swift"
-            timestampString = "577107738.273173"
+            timestampString = "577111745.825887"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Clothing-FireStore/Controllers/Helper-Controllers/StoryboardNavigationViewController.swift"
-            timestampString = "577107738.273329"
+            timestampString = "577111745.825991"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Clothing-FireStore/Controllers/Helper-Controllers/StoryboardNavigationViewController.swift"
-            timestampString = "577107738.273469"
+            timestampString = "577111745.826095"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Clothing-FireStore/Controllers/CartViewController.swift"
-            timestampString = "576951580.2734441"
+            timestampString = "577145918.987825"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Clothing-FireStore/Datamodels/Catalogue.swift"
-            timestampString = "577107738.274309"
+            timestampString = "577111745.8270611"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
@@ -218,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Clothing-FireStore/Datamodels/Catalogue.swift"
-            timestampString = "577107738.274508"
+            timestampString = "577111745.82748"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -266,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Clothing-FireStore/Controllers/CartViewController.swift"
-            timestampString = "576951580.274955"
+            timestampString = "577145919.02578"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -282,7 +282,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Clothing-FireStore/Controllers/Helper-Controllers/ContainerVC.swift"
-            timestampString = "577107738.274738"
+            timestampString = "577111745.827618"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -314,7 +314,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Clothing-FireStore/Views/XIB/TopTableViewCell.swift"
-            timestampString = "577107738.275053"
+            timestampString = "577111745.828007"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "12"
@@ -407,7 +407,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Clothing-FireStore/Views/XIB/TopTableViewCell.swift"
-            timestampString = "577107738.275252"
+            timestampString = "577111745.828329"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
@@ -500,7 +500,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Clothing-FireStore/Controllers/FilterdCatalogueViewController.swift"
-            timestampString = "577107738.275479"
+            timestampString = "577145919.030426"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
@@ -516,11 +516,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "Clothing-FireStore/Controllers/Helper-Controllers/MenuTableViewController.swift"
-            timestampString = "577107738.2756571"
+            timestampString = "577111745.828753"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
             <Actions>
@@ -532,6 +532,22 @@
                   </ActionContent>
                </BreakpointActionProxy>
             </Actions>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Clothing-FireStore/Controllers/CartViewController.swift"
+            timestampString = "577145919.039374"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

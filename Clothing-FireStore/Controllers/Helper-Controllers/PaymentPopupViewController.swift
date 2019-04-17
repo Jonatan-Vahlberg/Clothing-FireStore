@@ -27,7 +27,12 @@ class PaymentPopupViewController: StoryboardNavigationViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         
+    }
+    
+    func dismisskeyboard(){
+        view.endEditing(true)
     }
 
     @IBAction func procedeWithPayment(_ sender: UIButton) {

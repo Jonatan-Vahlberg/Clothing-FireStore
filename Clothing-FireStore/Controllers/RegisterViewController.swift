@@ -22,6 +22,11 @@ class RegisterViewController: StoryboardNavigationViewController {
         super.viewDidLoad()
 
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+    }
+    func dismisskeyboard(){
+        view.endEditing(true)
     }
     @IBAction func loginPressed(_ sender: UIBarButtonItem) {
         presentNextViewController(enumValue: .login)
@@ -67,6 +72,7 @@ class RegisterViewController: StoryboardNavigationViewController {
                         }
                         
                         //Move to Home Screen
+                        CurrentStates.shared.getCurrentCustomer(fromDatabase: true)
                         self.presentNextViewController(enumValue: .home)
                         
                     }
@@ -90,9 +96,10 @@ class RegisterViewController: StoryboardNavigationViewController {
     func uploadUserCoupleData(){
         
         let db = Firestore.firestore()
-        db.collection("users").document(Auth.auth().currentUser!.uid).setData([
-            "Name": "\(firstNameField.text!) \(lastNameField.text!)",
-            "Email": emailField.text!
+        db.collection("Users").document(Auth.auth().currentUser!.uid).setData([
+            "firstName": firstNameField.text,
+            "lastName": lastNameField.text,
+            "email": emailField.text!
             ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")

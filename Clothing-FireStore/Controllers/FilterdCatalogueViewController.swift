@@ -37,13 +37,13 @@ class FilterdCatalogueViewController: CatalogueViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0{
-            tableView.rowHeight = 116
+            tableView.rowHeight = 70
             let cell = tableView.dequeueReusableCell(withIdentifier: "topTableCell", for: indexPath) as! TopTableViewCell
             cell.delegate = self
             return cell
         }
         else{
-            tableView.rowHeight = tableView.frame.height - 116
+            tableView.rowHeight = tableView.frame.height - 70
             print (tableView.rowHeight)
             let cell = tableView.dequeueReusableCell(withIdentifier: "catalogueTableCell", for: indexPath) as! CatalogueTableViewCell
             cell.title.text = "Catalogue"

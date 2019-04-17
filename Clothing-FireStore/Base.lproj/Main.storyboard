@@ -1237,32 +1237,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="uzs-He-DOE">
-                                        <rect key="frame" x="0.0" y="340" width="375" height="100"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uzs-He-DOE" id="Dvd-1F-TrC">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSK-Ze-3ZL">
-                                                    <rect key="frame" x="16" y="26" width="343" height="48"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
-                                                    <state key="normal" title="Favourites">
-                                                        <color key="titleColor" red="0.54117647059999996" green="0.17254901959999999" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="goToFavourites:" destination="zDB-HK-Nz9" eventType="touchUpInside" id="9Fx-6F-kLd"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="TSK-Ze-3ZL" secondAttribute="bottom" constant="15" id="5tu-83-hpP"/>
-                                                <constraint firstItem="TSK-Ze-3ZL" firstAttribute="top" secondItem="Dvd-1F-TrC" secondAttribute="topMargin" constant="15" id="67h-Yu-2Ta"/>
-                                                <constraint firstItem="TSK-Ze-3ZL" firstAttribute="leading" secondItem="Dvd-1F-TrC" secondAttribute="leadingMargin" id="Lny-dG-b13"/>
-                                                <constraint firstItem="TSK-Ze-3ZL" firstAttribute="trailing" secondItem="Dvd-1F-TrC" secondAttribute="trailingMargin" id="OdM-xb-mit"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>

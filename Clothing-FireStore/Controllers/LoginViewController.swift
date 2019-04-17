@@ -17,7 +17,11 @@ class LoginViewController: StoryboardNavigationViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+    }
+    func dismisskeyboard(){
+        view.endEditing(true)
     }
 
     
@@ -57,6 +61,7 @@ class LoginViewController: StoryboardNavigationViewController {
                     if emailSaved && passwordSaved{
                         print("saved")
                     }
+                    CurrentStates.shared.getCurrentCustomer(fromDatabase: true)
                     self.presentNextViewController(enumValue: .home)
                 }
             })

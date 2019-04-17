@@ -16,6 +16,7 @@ class CatalogueItem{
     //var special: ()-> Void?
     var stock: Int
     var category = ""
+    var image = ""
     
     //from database
     init(id: String,name: String, price: Int, description: String,stock: Int, category: String) {
@@ -25,6 +26,8 @@ class CatalogueItem{
         self.description = description
         self.stock = stock
         self.category = category
+        self.image = "i\(id)"
+        
         
     }
     //initial init
@@ -34,7 +37,7 @@ class CatalogueItem{
         self.description = description
         self.stock = stock
         self.id = String(arc4random_uniform(900000) + 100000)
-        
+        self.image = "i\(id)"
     }
     
 }

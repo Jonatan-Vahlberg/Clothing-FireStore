@@ -24,6 +24,9 @@ class ProfileTableViewController: UITableViewController {
             print("Error Loging out User")
         }
         KeychainWrapper.standard.removeAllKeys()
+        CurrentStates.currentCustomer = Customer()
+        self.dismiss(animated: true, completion: nil)
+        
     }
     
     func goToDetail(type: String){
@@ -36,14 +39,6 @@ class ProfileTableViewController: UITableViewController {
     
     @IBAction func goToOrders(_ sender: Any) {
         goToDetail(type: "Orders")
-    }
-    
-    @IBAction func goToFavourites(_ sender: Any) {
-        goToDetail(type: "Favourites")
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
     }
 
 }

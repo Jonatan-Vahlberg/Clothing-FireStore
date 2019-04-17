@@ -42,6 +42,7 @@ extension CatalogueTableViewCell: UICollectionViewDataSource, UICollectionViewDe
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        title.text = CurrentStates.shared.catalogueState.get()
         let flowLayout = UICollectionViewFlowLayout()
         
         switch CurrentStates.shared.catalogueState{
@@ -88,7 +89,9 @@ extension CatalogueTableViewCell: UICollectionViewDataSource, UICollectionViewDe
             let item = filteredCatalogue[indexPath.item]
                 cell.itemName.text = item.name
                 cell.itemPrice.text = "\(item.price) kr"
-            
+            if let image = UIImage(named: item.image){
+                cell.imageView.image = image
+            }
         }
         else{
             guard let item = Catalogue.shared.get(for: indexPath.item) else{
@@ -97,9 +100,11 @@ extension CatalogueTableViewCell: UICollectionViewDataSource, UICollectionViewDe
             }
             cell.itemName.text = item.name
             cell.itemPrice.text = "\(item.price) kr"
+            if let image = UIImage(named: item.image){
+                cell.imageView.image = image
+            }
         }
-        
-        
+
             return cell
         
         
