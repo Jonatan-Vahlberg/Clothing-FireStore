@@ -12,6 +12,8 @@ class StoryboardNavigationViewController: UIViewController {
     
     let storyBoardRefrence = UIStoryboard(name: "Main", bundle: nil)
 
+    //Functions for moving throughout the app suing storyboard identifier instead of segues
+    
     func presentNextViewController(enumValue: StoryboardEnum){
         
         var identifier = ""
@@ -49,6 +51,7 @@ class StoryboardNavigationViewController: UIViewController {
         //present(viewController, animated: true, completion: nil)
     }
     
+    //Specified function for showing a special type of viewcontroller
     func showSpesificCatalogueViewController(isCategory:Bool,searchString: String){
         let viewController = storyBoardRefrence.instantiateViewController(withIdentifier: "catalogueContainerSB") as! ContainerVC
         viewController.passedData = [searchString]

@@ -9,6 +9,8 @@
 import Foundation
 import Firebase
 
+//A Struct for keeping track of varoius Singleton objects that in turn monitor any one key function of the app
+//Example currentCustomer is a database created object of the logged in customer
 struct CurrentStates{
     
     static var shared = CurrentStates()

@@ -37,6 +37,7 @@ class LoginViewController: StoryboardNavigationViewController {
         presentNextViewController(enumValue: .register)
     }
     
+    //Auth User to firebase saved users
     func authenticateUser(){
         //Checks if email or password fields are empty before continuing
         if(emailField.text?.count == 0 || passwordField.text?.count == 0){

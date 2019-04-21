@@ -10,13 +10,23 @@ import UIKit
 import Firebase
 
 class ProfileTableViewController: UITableViewController {
-
+    @IBOutlet var nameLbl: UILabel!
+    
+    @IBOutlet var emailLbl: UILabel!
     let storyBoardRefrence = UIStoryboard(name: "Main", bundle: nil)
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        if let user = CurrentStates.currentCustomer{
+            nameLbl.text = "\(user.firstName) \(user.lastName)"
+            emailLbl.text = "\(user.email)"
+        }
+    }
     
     @IBAction func toggleMenu(_ sender: Any) {
         NotificationCenter.default.post(name: NSNotification.Name("toggleMenu"), object: nil)
     }
-    
+    //attempts to wipe login from keychain and firebase"Auth"
     @IBAction func logOut(_ sender: UIButton) {
         do{
             try Auth.auth().signOut()

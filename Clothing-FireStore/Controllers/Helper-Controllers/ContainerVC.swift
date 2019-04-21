@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//Container View Controller for keeping container views
 class ContainerVC: UIViewController {
 
     @IBOutlet var menuXConstraint: NSLayoutConstraint!
@@ -20,9 +20,12 @@ class ContainerVC: UIViewController {
         
     }
     override func viewWillAppear(_ animated: Bool) {
+        
+        //Setup for notification center observer
         NotificationCenter.default.addObserver(self, selector: #selector(toggleMenu), name: Notification.Name("toggleMenu"), object: nil)
     }
     
+    //call of Notecenter observer
     @objc func toggleMenu(){
         if sideMenuOpen{
             
@@ -39,6 +42,7 @@ class ContainerVC: UIViewController {
         sideMenuOpen = !sideMenuOpen
     }
     
+    //Preparing for embeded segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "containerToItem"{
             let vc = segue.destination as! ItemViewController

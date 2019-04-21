@@ -58,6 +58,9 @@ class ItemViewController: StoryboardNavigationViewController {
         }
     }
 
+    @IBAction func goToCart(_ sender: UIBarButtonItem) {
+        presentNextViewController(enumValue: .cart)
+    }
     @IBAction func addToCartPressed(_ sender: UIButton) {
         if let  username = Auth.auth().currentUser?.uid{
             

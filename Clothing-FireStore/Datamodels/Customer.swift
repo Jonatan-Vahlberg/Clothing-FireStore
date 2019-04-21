@@ -9,6 +9,7 @@
 import Foundation
 
 //Customer Model on all info except password
+//Legacy Customer Object ("SUBJECT TO CHANGE")
 class Customer{
     
     var firstName: String

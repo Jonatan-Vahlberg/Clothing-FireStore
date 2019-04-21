@@ -6,6 +6,8 @@
 //  Copyright © 2019 Jonatan Vahlberg. All rights reserved.
 //
 
+
+//Enum for apps global state or what part of the app the user is accessing
 enum GlobalState{
     
     case none

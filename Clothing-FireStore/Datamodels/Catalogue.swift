@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-
+//Class creates a Lazy Singleton called shared from where all controllers draws their data
 class Catalogue{
     
     static let shared = Catalogue()
@@ -58,22 +58,11 @@ class Catalogue{
         itemList.append(item)
     }
     
-//    func update(exsisting item: CatalogueItem) -> Bool{
-//
-//        if itemList.first({$0.id == item.id}) = item{
-//
-//            return true
-//        }
-//
-//        return false
-//    }
     
     func filter(using filterString: String){
         
     }
-//    func filter(using filterEnum: enum){
-//
-//    }
+
     
     func getCatalogueFromDatabase(){
         let catalogueRefrence = Firestore.firestore().collection("Catalogue")
@@ -104,6 +93,6 @@ class Catalogue{
     }
         
     private init(){
-      //getCatalogueFromDatabase()
+      
     }
 }

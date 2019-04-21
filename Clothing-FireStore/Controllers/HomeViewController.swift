@@ -33,34 +33,12 @@ class HomeViewController: CatalogueViewController, UISearchControllerDelegate{
         
         tableView.register(UINib(nibName:"CatalogueTableViewCell", bundle: nil), forCellReuseIdentifier: "catalogueTableCell")
         
-//        for x in 0...(Catalogue.shared.count() - 1){
-//            print("Item \(x): \(Catalogue.shared.get(for: x)?.name)")
-//        }
-        //updateDatabase()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         tableView.reloadData()
     }
     
-    func updateDatabase(){
-        let refrence = Database.database().reference()
-        let catalogueDB = refrence.child("Catalogue")
-        
-        for x in 0...(Catalogue.shared.count() - 1){
-            if let item = Catalogue.shared.get(for: x){
-                let itemChild = catalogueDB.child(String(item.id))
-                
-                itemChild.child("Id").setValue(item.id)
-                itemChild.child("Name").setValue(item.name)
-                itemChild.child("Price").setValue(item.price)
-                itemChild.child("Description").setValue(item.description)
-                itemChild.child("Stock").setValue(item.stock)
-            }
-            
-        }
-        
-    }
     @IBAction func toggleMenu(_ sender: Any) {
         
         NotificationCenter.default.post(name: NSNotification.Name("toggleMenu"), object: nil)
@@ -77,6 +55,9 @@ class HomeViewController: CatalogueViewController, UISearchControllerDelegate{
         }
     }
 
+    @IBAction func goToCart(_ sender: Any) {
+        presentNextViewController(enumValue: .cart)
+    }
 }
 //MARK: - Table View Overrides
 extension HomeViewController{
@@ -116,15 +97,12 @@ extension HomeViewController{
             
             return cell
         }
-       
-        
-        
-        
+
     }
+
+
 }
-
-
-
+//exstensions for navigational protocols
 extension HomeViewController: NavigationalItems{
     
     func navigate(with index: Int) {

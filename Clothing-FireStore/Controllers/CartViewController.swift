@@ -40,13 +40,19 @@ class CartViewController: StoryboardNavigationViewController {
         }
         finalPriceLbl.title = "\(finalPrice)kr"
         tableView.reloadData()
+        
     }
+    
+    
     
     @IBAction func menuBtnPressed(_ sender: UIBarButtonItem) {
         NotificationCenter.default.post(name: NSNotification.Name("toggleMenu"), object: nil)
     }
 
     @IBAction func goToPayment(_ sender: UIBarButtonItem) {
+        if !(finalPrice > 0){
+            return
+        }
         if let user = Auth.auth().currentUser{
             performSegue(withIdentifier: "paymentModal", sender: self)
         }

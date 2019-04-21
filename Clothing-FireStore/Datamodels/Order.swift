@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+//LEGACY ORDER STRUCT MOSTLY UNUSED (SUBJECT OF DELETION IN FUTURE)
 struct Order{
     
     var orderNr = 0

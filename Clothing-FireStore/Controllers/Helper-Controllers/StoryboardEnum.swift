@@ -6,9 +6,9 @@
 //  Copyright © 2019 Jonatan Vahlberg. All rights reserved.
 //
 
-
+//Enum for storyboard navigation
 enum StoryboardEnum{
-    //Zero means corrup
+    
     case home
     
     case register

@@ -8,6 +8,7 @@
 
 import Foundation
 
+//Catalogue item class
 class CatalogueItem{
     let id: String
     let name : String

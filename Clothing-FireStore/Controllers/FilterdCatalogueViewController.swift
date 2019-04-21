@@ -15,6 +15,9 @@ class FilterdCatalogueViewController: CatalogueViewController {
     var searchController = UISearchController(searchResultsController: nil)
     var searchString: String?
     var searchValue = ""
+    @IBAction func goToCart(_ sender: UIBarButtonItem) {
+        presentNextViewController(enumValue: .cart)
+    }
     var filterdCatalogue = [CatalogueItem]()
     override func viewDidLoad() {
         super.viewDidLoad()

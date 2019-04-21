@@ -88,9 +88,6 @@ class MenuTableViewController: UITableViewController {
         case 2:
             presentNextViewController(enumValue: .catalogue)
             break;
-        case 3:
-            presentNextViewController(enumValue: .home)
-            break;
         case 4:
             if userIsLogedIn(){
                 presentNextViewController(enumValue: .profile)
@@ -99,12 +96,8 @@ class MenuTableViewController: UITableViewController {
                 presentNextViewController(enumValue: .login)
             }
             break;
-        
-        case 5:
-            presentNextViewController(enumValue: .home)
-            break;
         default:
-            presentNextViewController(enumValue: .home)
+            
             break;
         }
         tableView.deselectRow(at: indexPath, animated: true)

@@ -34,7 +34,8 @@ class PaymentPopupViewController: StoryboardNavigationViewController {
     func dismisskeyboard(){
         view.endEditing(true)
     }
-
+    // Aims to create a document in firestore to trigger a procceseing mail
+    //Test with Temp Mail
     @IBAction func procedeWithPayment(_ sender: UIButton) {
         if allFieldsFilledIn(){
             if discountField.text == ""{
@@ -67,7 +68,7 @@ class PaymentPopupViewController: StoryboardNavigationViewController {
                                              "firstName":user.firstName,
                                              "lastName": user.lastName], merge: false)
                             CurrentStates.currentCustomer?.cart = [:]
-                            self.dismiss(animated: true, completion: nil)
+                            self.presentNextViewController(enumValue: .cart)
                         }
                 })
                 
@@ -79,7 +80,7 @@ class PaymentPopupViewController: StoryboardNavigationViewController {
     @IBAction func returnToCart(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
-    
+    //Check for field Validity
     func allFieldsFilledIn() -> Bool{
         for field in textFields{
             if field.text == ""{
@@ -99,9 +100,7 @@ class PaymentPopupViewController: StoryboardNavigationViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func checkDiscountCode(){
-        
-    }
+    //Hide all but last four numbers of card for saving and mailing purposes
     func enshroud(cardNumber: String) -> String{
         let length = cardNumber.count - 5
         var newCardString = ""
@@ -114,12 +113,16 @@ class PaymentPopupViewController: StoryboardNavigationViewController {
         return newCardString
     }
 }
+
+//Exstension of date class to get a specified date string easy
 extension Date{
     static func getCurrentDate(fromFormat format: String) -> String{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
         return dateFormatter.string(from: Date())
     }
+    
+    //Gets date n number of days in the future from today
     static func getDateFromToday(fromFormat format: String, daysInFuture days: Int) -> String{
         if let futureDate = Calendar.current.date(byAdding: .day, value: days, to: Date()){
             let dateFormatter = DateFormatter()

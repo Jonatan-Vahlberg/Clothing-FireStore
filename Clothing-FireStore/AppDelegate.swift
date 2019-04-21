@@ -26,14 +26,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var identifier = ""
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        print("Reached Config")
-        FirebaseApp.configure()
-        print("passed Config")
         
+        FirebaseApp.configure()
+        
+        //Creating Database Refrence of Firestore
         let db = Firestore.firestore()
         
         
-        
+        //Attempts to grab email and password from keychain
         let emailOfcurrentUser: String? = KeychainWrapper.standard.string(forKey:"currentEmail")
         let passwordOfCurrentUser: String? = KeychainWrapper.standard.string(forKey:"currentPassword")
         
