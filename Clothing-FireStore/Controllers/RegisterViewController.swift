@@ -18,6 +18,7 @@ class RegisterViewController: StoryboardNavigationViewController {
     @IBOutlet var passwordField: UITextField!
     @IBOutlet var repeatPasswordField: UITextField!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -110,4 +111,9 @@ class RegisterViewController: StoryboardNavigationViewController {
         
     }
 
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        
+    }
 }

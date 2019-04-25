@@ -82,5 +82,10 @@ class LoginViewController: StoryboardNavigationViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        
+    }
+    
 
 }

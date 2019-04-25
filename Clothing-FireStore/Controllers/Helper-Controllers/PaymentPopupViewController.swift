@@ -38,8 +38,8 @@ class PaymentPopupViewController: StoryboardNavigationViewController {
     //Test with Temp Mail
     @IBAction func procedeWithPayment(_ sender: UIButton) {
         if allFieldsFilledIn(){
-            if discountField.text == ""{
-                checkDiscountCode()
+            if !(discountField.text == ""){
+                
             }
             let fullName = fullNameField.text
             let cardNumber = enshroud(cardNumber: accNumberField.text!)
